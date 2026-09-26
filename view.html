@@ -365,7 +365,7 @@ if(!p){
     var name=(form.elements["name"].value||"").trim();
     var phoneRaw=(form.elements["phone"].value||"").trim();
     var cfg=(window.TG||{});
-    if(!cfg.token||!cfg.chat_id||String(cfg.token).indexOf("BOT_TOKEN")>=0||String(cfg.chat_id).indexOf("CHAT_ID")>=0){
+    if(!cfg.relay){
       toast("접수 설정이 완료되지 않았습니다. 전화 010-8175-7015","err"); return;
     }
     var product=""; try{ product=(form.elements["product"].value||"").trim(); }catch(e){}
@@ -376,9 +376,9 @@ if(!p){
       +"\n시각: "+new Date().toLocaleString("ko-KR");
     var btn=form.querySelector("button[type=submit]"); if(btn) btn.disabled=true;
     localMsg(form,"접수 중입니다...","");
-    fetch("https://api.telegram.org/bot"+cfg.token+"/sendMessage",{
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({chat_id:cfg.chat_id, text:text})
+    fetch(cfg.relay,{
+      method:"POST", headers:{"Content-Type":"text/plain"},
+      body:JSON.stringify({type:"lead", text:text})
     }).then(function(r){return r.json();}).then(function(d){
       if(d && d.ok){ form.reset(); toast("상담 신청이 접수되었습니다. 곧 연락드리겠습니다.","ok"); localMsg(form,"상담 신청이 접수되었습니다. 곧 연락드리겠습니다.","ok"); }
       else { toast("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.","err"); localMsg(form,"전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.","err"); }
