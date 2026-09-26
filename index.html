@@ -739,6 +739,7 @@ if(bestGrid){ bestGrid.innerHTML=PRODUCTS.filter(function(p){return p.best;}).ma
     var product=""; try{ product=(form.elements["product"].value||"").trim(); }catch(e){}
     var text="\u{1F514} [보람상조피플] 상담 신청\n\n이름: "+name+"\n연락처: "+phoneRaw
       +(product?("\n관심상품: "+product):"")
+      +"\n유입: "+(window.srcLabel?srcLabel():"")
       +"\n페이지: "+location.href
       +"\n개인정보 동의: 예"
       +"\n시각: "+new Date().toLocaleString("ko-KR");
@@ -784,6 +785,29 @@ if(bestGrid){ bestGrid.innerHTML=PRODUCTS.filter(function(p){return p.best;}).ma
       site:location.host, page:location.pathname, q:q.slice(0,400), ref:ref.slice(0,300), ad:ad?1:0,
       ip:(j&&j.ip)||"", ua:navigator.userAgent.slice(0,200)})}).catch(function(){});
   });
+})();
+</script>
+
+<script>
+(function(){
+  function q(k){var m=location.search.match(new RegExp("[?&]"+k+"=([^&]*)"));try{return m?decodeURIComponent(m[1].replace(/\+/g," ")):"";}catch(e){return m?m[1]:"";}}
+  var s=""; try{ s=sessionStorage.getItem("src")||""; }catch(e){}
+  if(!s){
+    var ref=document.referrer||"", host=""; try{ host=ref?new URL(ref).host:""; }catch(e){}
+    if(host===location.host) host="";
+    var u=[q("utm_source"),q("utm_campaign"),q("utm_content")].filter(Boolean).join(" / ");
+    var kw=q("n_keyword")||q("n_query");
+    if(u) s=u;
+    else if(kw||/NaPm=|n_media=/.test(location.search)||/adcr\.naver/.test(host)) s="네이버광고"+(kw?(" / "+kw):"");
+    else if(/blog\.naver/.test(host)) s="네이버블로그";
+    else if(/search\.naver/.test(host)) s="네이버검색";
+    else if(/instagram|facebook/.test(host)) s="인스타·페북";
+    else if(/google/.test(host)) s="구글";
+    else if(/daum|kakao/.test(host)) s="다음·카카오";
+    else s=host||"직접";
+    try{ sessionStorage.setItem("src",s); }catch(e){}
+  }
+  window.srcLabel=function(){ return s; };
 })();
 </script>
 
