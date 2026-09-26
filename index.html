@@ -773,4 +773,18 @@ if(bestGrid){ bestGrid.innerHTML=PRODUCTS.filter(function(p){return p.best;}).ma
 })();
 </script>
 
+<script>
+(function(){
+  var u=window.VISITLOG; if(!u) return;
+  var ref=document.referrer||"";
+  try{ if(ref && new URL(ref).host===location.host) return; }catch(e){}
+  var q=location.search, ad=/NaPm=|n_media=|n_query=|n_keyword=/.test(q)||/adcr\.naver|ad\.search\.naver/.test(ref);
+  fetch("https://api.ipify.org?format=json").then(function(r){return r.json();}).catch(function(){return {};}).then(function(j){
+    fetch(u,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify({
+      site:location.host, page:location.pathname, q:q.slice(0,400), ref:ref.slice(0,300), ad:ad?1:0,
+      ip:(j&&j.ip)||"", ua:navigator.userAgent.slice(0,200)})}).catch(function(){});
+  });
+})();
+</script>
+
 </body></html>
