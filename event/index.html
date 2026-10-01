@@ -343,7 +343,7 @@ details.pv ul{padding-left:16px;line-height:1.6;margin-top:6px}
       if(!/^01\d-\d{3,4}-\d{4}$/.test(tel)){say("휴대폰 번호를 정확히 입력해 주세요.");E.tel.focus();return;}
       if(!E.w1.value){say("관심 가전을 선택해 주세요.");E.w1.focus();return;}
       if(!E.agree.checked){say("개인정보 수집·이용에 동의해 주세요.");return;}
-      var cfg=window.TG||{}; if(!cfg.relay){say("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.");return;}
+      var cfg=window.TG||{}; if(!cfg.relay){say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");return;}
       var src=[q("utm_source"),q("utm_campaign"),q("utm_content")].filter(Boolean).join(" / ")||"직접";
       var text="🔔 [가전 멤버십] "+f.dataset.tag+"\n이름: "+name+"\n연락처: "+tel+"\n관심 가전: "+E.w1.value+
         (plan?"\n관심 구좌: "+plan:"")+(E.when?"\n통화 시간: "+E.when.value:"")+
@@ -354,8 +354,8 @@ details.pv ul{padding-left:16px;line-height:1.6;margin-top:6px}
       .then(function(r){return r.json();}).then(function(d){
         if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>상담 신청이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 전화드리겠습니다.</p></div>';
           if(window.fbq)fbq("track","Lead");}
-        else{say("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.");b.disabled=false;}
-      }).catch(function(){say("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.");b.disabled=false;});
+        else{say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");b.disabled=false;}
+      }).catch(function(){say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");b.disabled=false;});
     });
   });
 })();
