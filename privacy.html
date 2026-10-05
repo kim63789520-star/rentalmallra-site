@@ -20,6 +20,8 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html{-webkit-tap-highlight-color:transparent}
+a,button,select,summary,label{touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--paper);color:var(--ink);padding-top:62px;padding-bottom:84px;word-break:keep-all;overflow-wrap:break-word;
   font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
@@ -31,18 +33,18 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:14px 24px;font-weight:700;
   font-size:15px;border:1.5px solid transparent;cursor:pointer;transition:background .15s,color .15s;white-space:nowrap;font-family:inherit}
 .btn-primary,.btn-dark{background:var(--navy);color:#fff}
-.btn-primary:hover,.btn-dark:hover{background:var(--navy-deep)}
+@media(hover:hover) and (pointer:fine){.btn-primary:hover,.btn-dark:hover{background:var(--navy-deep)}}
 .btn-ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
-.btn-ghost:hover{background:var(--mist)}
+@media(hover:hover) and (pointer:fine){.btn-ghost:hover{background:var(--mist)}}
 header{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
 .logo{display:flex;align-items:baseline;gap:10px;color:#fff}
 .logo b{font-family:var(--serif);font-weight:400;font-size:21px}
 .logo span{font-size:13px;color:var(--on-navy)}
 .nav-links{display:flex;gap:26px;color:var(--on-navy);font-size:15px;font-weight:500}
-.nav-links a:hover{color:#fff}
+@media(hover:hover) and (pointer:fine){.nav-links a:hover{color:#fff}}
 .nav-cta .btn{padding:9px 16px;font-size:14px;background:#fff;color:var(--navy)}
-.nav-cta .btn:hover{background:var(--mist)}
+@media(hover:hover) and (pointer:fine){.nav-cta .btn:hover{background:var(--mist)}}
 @media(max-width:820px){.nav-links{display:none}}
 section{padding:72px 0;scroll-margin-top:72px}
 .sec-head{max-width:680px;margin:0 0 36px}
@@ -92,7 +94,7 @@ footer .disc{margin-top:18px;color:#8d9ab0;font-size:12px;line-height:1.7;border
 .cs-form input:focus{outline:none;border-color:var(--navy)}
 .cs-form button{margin-top:6px;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:18px;font-size:17px;
   font-weight:800;cursor:pointer;transition:background .15s;font-family:inherit}
-.cs-form button:hover{background:var(--navy-deep)}
+@media(hover:hover) and (pointer:fine){.cs-form button:hover{background:var(--navy-deep)}}
 .cs-form button:disabled{opacity:.6;cursor:default}
 .cs-msg{margin:2px 0 0;font-size:14px;font-weight:700;min-height:20px}
 .cs-msg.ok{color:var(--ok)}
@@ -128,9 +130,9 @@ footer .disc{margin-top:18px;color:#8d9ab0;font-size:12px;line-height:1.7;border
 .alt-btn span b{font-size:17px;font-weight:800}
 .alt-btn span i{font-style:normal;font-size:13px;margin-top:3px}
 .alt-call{background:#19b25b;color:#fff}
-.alt-call:hover{background:#149a4d}
+@media(hover:hover) and (pointer:fine){.alt-call:hover{background:#149a4d}}
 .alt-kakao{background:#FEE500;color:#3C1E1E}
-.alt-kakao:hover{background:#f0d800}
+@media(hover:hover) and (pointer:fine){.alt-kakao:hover{background:#f0d800}}
 /* 플로팅 빠른상담 버튼 (데스크톱 왼쪽 · 모바일 오른쪽) */
 .floatbtns{position:fixed;left:16px;bottom:104px;z-index:80;display:flex;flex-direction:column;gap:10px}
 .fb{display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;
@@ -151,7 +153,7 @@ footer .disc{margin-top:18px;color:#8d9ab0;font-size:12px;line-height:1.7;border
 .lb-form input::placeholder{color:#9aa7bb}
 .lb-form input:focus{outline:none;border-color:#fff}
 .lb-form button{flex:0 0 auto;background:#fff;color:var(--navy);border:0;border-radius:6px;padding:13px 24px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .15s}
-.lb-form button:hover{background:var(--mist)}
+@media(hover:hover) and (pointer:fine){.lb-form button:hover{background:var(--mist)}}
 .lb-form button:disabled{opacity:.6}
 @media(max-width:820px){.lb-title span i{display:none}.lb-title b{font-size:14px}}
 @media(max-width:640px){
