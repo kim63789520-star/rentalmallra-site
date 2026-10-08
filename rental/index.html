@@ -107,20 +107,47 @@ footer a{color:#cfcfcf}
 .bar a{flex:1;height:50px;border-radius:10px;font-weight:900;font-size:16px;display:grid;place-items:center;text-decoration:none}
 .bar .call{border:2px solid var(--navy);color:var(--navy);background:#fff}
 .bar .go{background:var(--red);color:#fff}
+.hero .cap{bottom:112px}
+.hero h1{font-size:33px}
+.hero .pr b{color:var(--yel);font-weight:900}
+.top .kk{background:#fee500;color:#191919;border-radius:6px;padding:4px 9px;font-size:13px;font-weight:900;text-decoration:none;margin-left:8px}
+.grid{padding:28px 14px 8px}
+.grid h2{font-size:23px;padding:0 6px}
+.grid .lead{padding:0 6px;margin-top:6px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:16px}
+.pc{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:12px 6px 10px;text-align:center;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;gap:4px;align-items:center}
+.pc:active{border-color:var(--red)}
+.pc-t{font-size:13px;font-weight:700;color:#333;line-height:1.25;letter-spacing:-.4px}
+.pc-p{font-size:14px;font-weight:900;color:var(--red);letter-spacing:-.5px;white-space:nowrap}
+.pc-p:before{content:"최저";font-size:9px;color:#fff;background:var(--red);border-radius:3px;padding:1px 4px;margin-right:4px;vertical-align:2px;font-weight:700}
+.mall{margin:22px 0 0;display:block;text-decoration:none;background:var(--navy);color:#fff;border-radius:16px;padding:20px 18px;box-shadow:0 12px 28px rgba(20,33,61,.32);position:relative}
+.mall b{display:block;font-size:22px;font-weight:900;letter-spacing:-.6px;line-height:1.3;padding-right:30px}
+.mall b em{font-style:normal;color:var(--yel)}
+.mall span{display:block;font-size:13px;opacity:.85;margin-top:6px}
+.mall i{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-style:normal;font-size:30px;font-weight:900;color:var(--yel)}
+.kakao{position:fixed;right:14px;bottom:calc(78px + env(safe-area-inset-bottom));z-index:10;width:58px;height:58px;border-radius:50%;background:#fee500;color:#191919;display:grid;place-items:center;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25);font-size:11px;font-weight:900;line-height:1.1;text-align:center}
+.kakao svg{width:26px;height:26px;display:block;margin:0 auto 1px}
+.bar .kk{background:#fee500;color:#191919}
+.vsb{margin-top:18px;border:2px solid var(--navy);border-radius:14px;overflow:hidden}
+.vsb div{display:grid;grid-template-columns:1.1fr 1fr 1fr;font-size:14px}
+.vsb div span{padding:12px 10px;border-top:1px solid var(--line)}
+.vsb div:first-child span{border:0;background:var(--navy);color:#fff;font-weight:700;font-size:13px}
+.vsb div span:first-child{font-weight:700;background:var(--gray)}
+.vsb div span.hi{color:var(--red);font-weight:900}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('set','autoConfig',false,'1612056800649940');fbq('init','1612056800649940');fbq('track','PageView');</script>
 </head>
 <body><div class="wrap">
 
-<div class="top"><span>렌탈 견적 상담 · 전국</span><a href="tel:010-8175-7015">📞 010-8175-7015</a></div>
+<div class="top"><span>렌탈사 비교 최저가 견적</span><span><a href="tel:010-8175-7015">📞 010-8175-7015</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">카톡</a></span></div>
 
 <header class="hero">
   <video autoplay muted loop playsinline preload="metadata" poster="img/scene_hero.jpg"><source src="img/hero.mp4" type="video/mp4"></video>
   <div class="cap">
-    <span class="bdg">정수기 · 노트북 · 전기자전거 · 안마의자 · 가전</span>
-    <h1>렌탈, 월 요금 <em>가장 싼 곳</em>으로<br>찾아서 알려 드립니다</h1>
-    <p class="pr">렌탈사 여러 곳 견적을 한 번에 비교 · 등록비·설치비 면제 상품 우선</p>
+    <span class="bdg">렌탈사 비교 최저가 견적</span>
+    <h1>같은 제품도<br>렌탈사마다 <em>월 요금이 다릅니다</em></h1>
+    <p class="pr">정수기 <b>월 17,900원~</b> · 세탁기 <b>월 22,200원~</b> · 전기자전거 <b>월 23,200원~</b><br>가장 싼 렌탈사로 찾아서 전화로 알려 드립니다</p>
   </div>
 </header>
 
@@ -130,7 +157,7 @@ footer a{color:#cfcfcf}
       <p class="qt">필요한 품목 <i>먼저 고르세요</i></p>
       <p class="qs">고르고 번호만 남기면 렌탈사별 월 요금을 전화로 알려 드립니다</p>
       <p class="ql">필요한 품목 <small>최대 2개</small></p>
-      <div class="chips"><button type="button" data-k="water">정수기</button><button type="button" data-k="laptop">노트북·컴퓨터</button><button type="button" data-k="ebike">전기자전거</button><button type="button" data-k="massage">안마의자</button><button type="button" data-k="bed">침대·매트리스·소파</button><button type="button" data-k="fridge">냉장고·김치냉장고</button><button type="button" data-k="wash">세탁기·건조기</button><button type="button" data-k="tv">TV·프로젝터</button><button type="button" data-k="air">에어컨·냉난방</button><button type="button" data-k="kitchen">주방가전</button><button type="button" data-k="clean">청소기·운동기구</button><button type="button" data-k="etc">기타</button></div>
+      <div class="chips"><button type="button" data-k="water">정수기·비데</button><button type="button" data-k="laptop">노트북·컴퓨터</button><button type="button" data-k="ebike">전기자전거</button><button type="button" data-k="massage">안마의자</button><button type="button" data-k="bed">침대·매트리스·소파</button><button type="button" data-k="fridge">냉장고·김치냉장고</button><button type="button" data-k="wash">세탁기·건조기</button><button type="button" data-k="tv">TV·프로젝터</button><button type="button" data-k="air">에어컨·공기청정기</button><button type="button" data-k="kitchen">주방가전</button><button type="button" data-k="clean">청소기·생활가전</button><button type="button" data-k="etc">기타</button></div>
       <input type="hidden" name="w1" value=""><input type="hidden" name="w2" value="">
       <div class="in2"><input type="text" name="name" autocomplete="name" placeholder="이름" aria-label="이름">
         <input type="tel" name="tel" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="010-0000-0000" aria-label="휴대폰 번호"></div>
@@ -153,6 +180,14 @@ footer a{color:#cfcfcf}
   <div><b>30초 신청</b><small>품목 고르고<br>번호만</small></div>
 </div>
 
+<section class="grid">
+  <h2>품목별 <span class="red">최저 월 요금</span></h2>
+  <p class="lead">누르면 위 신청 폼에 바로 담깁니다. 렌탈사 비교 후 더 싼 곳이 있으면 그쪽으로 안내합니다.</p>
+  <div class="pgrid"><button type="button" class="pc" data-k="water"><span class="pc-t">정수기·비데</span><span class="pc-p">월 17,900원~</span></button><button type="button" class="pc" data-k="laptop"><span class="pc-t">노트북·컴퓨터</span><span class="pc-p">월 16,000원~</span></button><button type="button" class="pc" data-k="ebike"><span class="pc-t">전기자전거</span><span class="pc-p">월 23,200원~</span></button><button type="button" class="pc" data-k="massage"><span class="pc-t">안마의자</span><span class="pc-p">월 37,000원~</span></button><button type="button" class="pc" data-k="bed"><span class="pc-t">침대·매트리스·소파</span><span class="pc-p">월 11,900원~</span></button><button type="button" class="pc" data-k="fridge"><span class="pc-t">냉장고·김치냉장고</span><span class="pc-p">월 15,900원~</span></button><button type="button" class="pc" data-k="wash"><span class="pc-t">세탁기·건조기</span><span class="pc-p">월 22,200원~</span></button><button type="button" class="pc" data-k="tv"><span class="pc-t">TV·프로젝터</span><span class="pc-p">월 8,900원~</span></button><button type="button" class="pc" data-k="air"><span class="pc-t">에어컨·공기청정기</span><span class="pc-p">월 14,900원~</span></button><button type="button" class="pc" data-k="kitchen"><span class="pc-t">주방가전</span><span class="pc-p">월 9,800원~</span></button><button type="button" class="pc" data-k="clean"><span class="pc-t">청소기·생활가전</span><span class="pc-p">월 7,600원~</span></button></div>
+  <p class="cond">렌탈몰라샵 등록 상품의 기본 월 렌탈료 기준(2026-10-08), 제휴카드 할인 제외. 모델·기간·렌탈사에 따라 다르며 정확한 요금은 상담 견적으로 안내합니다.</p>
+  <a class="mall" href="https://rentalmalla.shop/" target="_blank" rel="noopener"><b>상품 <em>27,628개</em> 전체 보기</b><span>렌탈몰라샵 · 브랜드 226곳 · 렌탈사별 월 요금 비교</span><i>›</i></a>
+</section>
+
 <section class="steps">
   <h2>신청부터 설치까지<br><span class="red">딱 세 단계</span></h2>
   <div class="step"><img src="img/scene_call.jpg" alt="" loading="lazy"><div><span class="n">STEP 1</span><b>품목 고르고 신청</b><p>위 폼에서 필요한 품목과 번호만 남기세요.</p></div></div>
@@ -169,6 +204,12 @@ footer a{color:#cfcfcf}
     <li>사무실·매장·학원처럼 여러 대를 한 번에 들일 때</li>
     <li>전기자전거·안마의자처럼 써 보고 정하고 싶은 제품일 때</li>
   </ul>
+  <div class="vsb">
+    <div><span></span><span>직접 알아보면</span><span>여기서 신청하면</span></div>
+    <div><span>견적</span><span>렌탈사마다 따로</span><span class="hi">한 번에 비교</span></div>
+    <div><span>등록비·설치비</span><span>상품마다 확인</span><span class="hi">면제 상품 우선</span></div>
+    <div><span>걸리는 시간</span><span>며칠</span><span class="hi">전화 한 통</span></div>
+  </div>
 </section>
 
 <section style="background:#fff;padding-top:0">
@@ -180,7 +221,6 @@ footer a{color:#cfcfcf}
     <figure><img src="img/scene_robot.jpg" alt="" loading="lazy"><figcaption>청소기·주방가전</figcaption></figure>
   </div>
   <p class="cond">사진은 이해를 돕기 위한 연출 이미지입니다. 정수기·전기자전거·안마의자·침대·냉장고·에어컨도 상담 가능합니다.</p>
-  <a class="btn ghost" href="https://rentalmalla.shop/" target="_blank" rel="noopener">상품 2만 개 전체 보기 (렌탈몰라샵)</a>
 </section>
 
 <section class="must">
@@ -208,7 +248,7 @@ footer a{color:#cfcfcf}
       <p class="qt">견적 상담 신청</p>
       <p class="qs">가입 권유 없이 견적만 받아 보셔도 됩니다</p>
       <p class="ql">필요한 품목 <small>최대 2개</small></p>
-      <div class="chips"><button type="button" data-k="water">정수기</button><button type="button" data-k="laptop">노트북·컴퓨터</button><button type="button" data-k="ebike">전기자전거</button><button type="button" data-k="massage">안마의자</button><button type="button" data-k="bed">침대·매트리스·소파</button><button type="button" data-k="fridge">냉장고·김치냉장고</button><button type="button" data-k="wash">세탁기·건조기</button><button type="button" data-k="tv">TV·프로젝터</button><button type="button" data-k="air">에어컨·냉난방</button><button type="button" data-k="kitchen">주방가전</button><button type="button" data-k="clean">청소기·운동기구</button><button type="button" data-k="etc">기타</button></div>
+      <div class="chips"><button type="button" data-k="water">정수기·비데</button><button type="button" data-k="laptop">노트북·컴퓨터</button><button type="button" data-k="ebike">전기자전거</button><button type="button" data-k="massage">안마의자</button><button type="button" data-k="bed">침대·매트리스·소파</button><button type="button" data-k="fridge">냉장고·김치냉장고</button><button type="button" data-k="wash">세탁기·건조기</button><button type="button" data-k="tv">TV·프로젝터</button><button type="button" data-k="air">에어컨·공기청정기</button><button type="button" data-k="kitchen">주방가전</button><button type="button" data-k="clean">청소기·생활가전</button><button type="button" data-k="etc">기타</button></div>
       <input type="hidden" name="w1" value=""><input type="hidden" name="w2" value="">
       <div class="in2"><input type="text" name="name" autocomplete="name" placeholder="이름" aria-label="이름">
         <input type="tel" name="tel" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="010-0000-0000" aria-label="휴대폰 번호"></div>
@@ -235,7 +275,8 @@ footer a{color:#cfcfcf}
 </footer>
 
 </div>
-<div class="bar"><div><a class="call" href="tel:010-8175-7015">📞 전화 상담</a><a class="go" href="#apply">견적 받기</a></div></div>
+<a class="kakao" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담"><span><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7L5.6 21l4.3-2.8c.7.1 1.4.2 2.1.2 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카톡</span></a>
+<div class="bar"><div><a class="call" href="tel:010-8175-7015">📞 전화</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡</a><a class="go" href="#apply">최저 견적</a></div></div>
 
 <script src="../config.js"></script>
 <script>
@@ -253,6 +294,10 @@ footer a{color:#cfcfcf}
 (function(){
   function q(k){var m=location.search.match(new RegExp("[?&]"+k+"=([^&]*)"));try{return m?decodeURIComponent(m[1].replace(/\+/g," ")):"";}catch(e){return m?m[1]:"";}}
   var pre=q("c");
+  document.querySelectorAll(".pgrid .pc").forEach(function(b){b.addEventListener("click",function(){
+    var first=document.querySelector("form.lead-f .chips button[data-k='"+b.dataset.k+"']");
+    if(first&&!first.classList.contains("on"))first.click();
+    document.querySelector(".quick").scrollIntoView({behavior:"smooth",block:"start"});});});
   document.querySelectorAll("form.lead-f").forEach(function(f){
     var msg=f.querySelector(".msg"),E=f.elements,picked=[];
     var chips=f.querySelectorAll(".chips button");
