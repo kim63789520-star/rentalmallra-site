@@ -71,7 +71,11 @@ details.pv ul{padding-left:16px;line-height:1.6;margin-top:6px}
 .done .ck{width:64px;height:64px;border-radius:50%;background:#16a34a;color:#fff;font-size:34px;font-weight:900;display:grid;place-items:center;margin:0 auto}
 .done b{display:block;font-size:21px;font-weight:900;margin-top:14px}
 .done p{font-size:15px;color:var(--sub);margin-top:6px;line-height:1.6}
-.pts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:24px 14px 0}
+.host{display:flex;align-items:center;gap:12px;margin:14px 14px 0;background:var(--gray);border-radius:14px;padding:10px 14px}
+.host img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15);flex:none}
+.host b{display:block;font-size:15px;font-weight:900;letter-spacing:-.3px}
+.host span{display:block;font-size:12.5px;color:var(--sub);margin-top:2px;line-height:1.4}
+.pts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px 14px 0}
 .pts div{background:var(--gray);border-radius:12px;padding:14px 8px;text-align:center}
 .pts b{display:block;font-size:17px;font-weight:900;color:var(--navy);letter-spacing:-.5px;line-height:1.3}
 .pts small{display:block;font-size:12px;color:var(--sub);margin-top:4px;line-height:1.4}
@@ -198,6 +202,8 @@ footer a{color:#cfcfcf}
     </form></div>
 </div>
 
+<div class="host"><img src="img/profile.jpg" alt=""><div><b>여기 담당자가 직접 상담해 드립니다.</b><span>렌탈 상담 담당 김다혜 · 다콩 대표 · 신청하시면 제가 직접 전화드립니다</span></div></div>
+
 <div class="pts">
   <div><b>목돈 없이</b><small>월 요금으로<br>바로 사용</small></div>
   <div><b>견적 비교</b><small>렌탈사 여러 곳<br>한 번에</small></div>
@@ -223,7 +229,7 @@ footer a{color:#cfcfcf}
 <section class="me">
   <div class="pic">
     <img src="img/profile.jpg" alt="렌탈 상담 담당 김다혜">
-    <div class="nm"><small>렌탈 상담 담당 · 다콩 대표</small><b>김다혜</b><span>신청하신 분께 제가 직접 전화드립니다</span></div>
+    <div class="nm"><small>렌탈 상담 담당 · 다콩 대표</small><b>김다혜</b><span>여기 담당자가 직접 상담해 드립니다.</span></div>
   </div>
   <blockquote>같은 정수기도 렌탈사에 따라 월 요금이 <b>만 원 넘게</b> 차이 납니다. 광고에 나온 한 곳만 보지 마시고, 저한테 품목만 알려 주세요. <b>가장 싼 조건</b>을 찾아서 알려 드리고, 가입은 그다음에 결정하시면 됩니다.</blockquote>
   <ul>
@@ -313,7 +319,6 @@ footer a{color:#cfcfcf}
 </footer>
 
 </div>
-<a class="kakao" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담"><span><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7L5.6 21l4.3-2.8c.7.1 1.4.2 2.1.2 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카톡</span></a>
 <div class="bar"><div><a class="call" href="tel:010-8175-7015">📞 전화</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡</a><a class="go" href="#apply">최저 견적</a></div></div>
 
 <script src="../config.js"></script>
@@ -332,19 +337,23 @@ footer a{color:#cfcfcf}
 (function(){
   function q(k){var m=location.search.match(new RegExp("[?&]"+k+"=([^&]*)"));try{return m?decodeURIComponent(m[1].replace(/\+/g," ")):"";}catch(e){return m?m[1]:"";}}
   var pre=q("c");
+  var HERO={"water": {"b": "정수기·비데 렌탈 최저가 비교", "h": "정수기·비데 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 17,900원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "정수기·비데 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "laptop": {"b": "노트북·컴퓨터 렌탈 최저가 비교", "h": "노트북·컴퓨터 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 16,000원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "노트북·컴퓨터 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "ebike": {"b": "전기자전거 렌탈 최저가 비교", "h": "전기자전거 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 23,200원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "전기자전거 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "massage": {"b": "안마의자 렌탈 최저가 비교", "h": "안마의자 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 37,000원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "안마의자 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "bed": {"b": "침대·매트리스·소파 렌탈 최저가 비교", "h": "침대·매트리스·소파 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 11,900원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "침대·매트리스·소파 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "fridge": {"b": "냉장고·김치냉장고 렌탈 최저가 비교", "h": "냉장고·김치냉장고 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 15,900원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "냉장고·김치냉장고 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "wash": {"b": "세탁기·건조기 렌탈 최저가 비교", "h": "세탁기·건조기 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 22,200원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "세탁기·건조기 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "tv": {"b": "TV·프로젝터 렌탈 최저가 비교", "h": "TV·프로젝터 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 8,900원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "TV·프로젝터 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "air": {"b": "에어컨·공기청정기 렌탈 최저가 비교", "h": "에어컨·공기청정기 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 14,900원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "에어컨·공기청정기 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "kitchen": {"b": "주방가전 렌탈 최저가 비교", "h": "주방가전 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 9,800원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "주방가전 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "clean": {"b": "청소기·생활가전 렌탈 최저가 비교", "h": "청소기·생활가전 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 7,600원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "청소기·생활가전 렌탈 최저가 견적 — 다콩 렌탈몰라"}, "etc": {"b": "기타 렌탈 최저가 비교", "h": "기타 렌탈,<br>렌탈사마다 <em>월 요금이 다릅니다</em>", "p": "<b>월 6,000원~</b> 부터 · 렌탈사 여러 곳 견적을 비교해 가장 싼 곳으로 알려 드립니다", "t": "기타 렌탈 최저가 견적 — 다콩 렌탈몰라"}};
+  if(pre&&HERO[pre]){var h=HERO[pre];document.querySelector(".hero h1").innerHTML=h.h;document.querySelector(".hero .pr").innerHTML=h.p;document.querySelector(".hero .bdg").textContent=h.b;document.title=h.t;}
+  var picked=[], forms=[];
+  function paintAll(){forms.forEach(function(x){x.paint();});}
   document.querySelectorAll(".pgrid .pc").forEach(function(b){b.addEventListener("click",function(){
     var first=document.querySelector("form.lead-f .chips button[data-k='"+b.dataset.k+"']");
     if(first&&!first.classList.contains("on"))first.click();
     document.querySelector(".quick").scrollIntoView({behavior:"smooth",block:"start"});});});
   document.querySelectorAll("form.lead-f").forEach(function(f){
-    var msg=f.querySelector(".msg"),E=f.elements,picked=[];
+    var msg=f.querySelector(".msg"),E=f.elements;
     var chips=f.querySelectorAll(".chips button");
     function paint(){chips.forEach(function(c){var k=picked.indexOf(c.querySelector(".tx").textContent);c.classList.toggle("on",k>=0);c.setAttribute("aria-pressed",k>=0?"true":"false");c.dataset.o=k>=0?(k+1):"";});
       E.w1.value=picked[0]||"";E.w2.value=picked[1]||"";}
     chips.forEach(function(c){c.addEventListener("click",function(){var t=c.querySelector(".tx").textContent,k=picked.indexOf(t);
-      if(k>=0)picked.splice(k,1);else{if(picked.length>=2)picked.shift();picked.push(t);}paint();});
-      if(pre&&c.dataset.k===pre){picked.push(c.querySelector(".tx").textContent);}});
-    paint();
+      if(k>=0)picked.splice(k,1);else{if(picked.length>=2)picked.shift();picked.push(t);}paintAll();});
+      if(pre&&c.dataset.k===pre&&picked.indexOf(c.querySelector(".tx").textContent)<0){picked.push(c.querySelector(".tx").textContent);}});
+    forms.push({paint:paint}); paint();
     function say(t){msg.textContent=t;msg.className="msg err";}
     E.tel.addEventListener("input",function(){
       var d=this.value.replace(/\D/g,"").slice(0,11);
