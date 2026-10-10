@@ -288,6 +288,12 @@ section{scroll-margin-top:72px}
 .pcard .brand{font-size:12px;color:var(--muted);font-weight:600}
 .pcard .name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.4;margin:3px 0 2px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:39px}
+.pcard .imgbox img{transition:transform .3s ease}
+@media(hover:hover) and (pointer:fine){
+  .pcard:hover .name{text-decoration:underline}
+  .pcard:hover .imgbox img{transform:scale(1.05)}
+}
+@media(prefers-reduced-motion:reduce){.pcard .imgbox img{transition:none}.pcard:hover .imgbox img{transform:none}}
 .pcard .model{font-size:11.5px;color:#9aa2ae;margin-bottom:12px;word-break:break-all}
 .pcard .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--line)}
 .pcard .m{font-size:12px;color:var(--muted)}
@@ -318,7 +324,7 @@ section{scroll-margin-top:72px}
 .rv-body p{margin:0 0 12px;font-size:13.5px;color:var(--muted);line-height:1.7}
 .rv-name{font-size:12px;color:#9aa2ae;border-top:1px solid var(--line);padding-top:10px}
 .rv-disc{margin:22px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
-/* 이런 분들이 많이 선택 */
+/* 이용 목적 안내 */
 .usecase{background:var(--bg)}
 .uc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.uc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
@@ -349,7 +355,7 @@ section{scroll-margin-top:72px}
   <div class="wrap nav">
     <a class="logo" href="index.html"><b>소노아임레디</b><span>가전결합</span></a>
     <nav class="nav-links">
-      <a href="index.html#best">추천 가전</a>
+
       <a href="index.html#tiers">상품 안내</a>
       <a href="index.html#how">결합 구조</a>
       <a href="index.html#refund">환급 조건</a>
@@ -429,13 +435,7 @@ section{scroll-margin-top:72px}
 </section>
 
 
-<section class="best" id="best">
-  <div class="wrap">
-    <div class="sec-head"><div class="tag">PICK</div><h2>추천 가전</h2>
-      <p>먼저 살펴보시기 좋은 구성입니다. 카드를 누르면 상세로 이동합니다.</p></div>
-    <div class="best-grid" id="bestGrid"></div>
-  </div>
-</section>
+
 
 <section class="catalog" id="catalog">
   <div class="wrap">
@@ -459,7 +459,7 @@ section{scroll-margin-top:72px}
   </div>
 </section>
 
-<section class="usecase" id="usecase"><div class="wrap"><div class="sec-head"><div class="tag">FOR YOU</div><h2>이런 분들이 많이 선택합니다</h2><p>목돈 부담 없이 필요한 가전을 갖추고, 조건을 채우면 납입금을 돌려받는 구조를 찾는 분들께 맞습니다.</p></div><div class="uc-grid"><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></div><h3>혼수·신혼 준비</h3><p>TV·냉장고·세탁기 등 여러 가전을 한 번에 갖춰야 하는데, 목돈을 한 번에 쓰기는 부담스러운 분</p></div><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div><h3>이사·새집 입주</h3><p>새 집 구조와 취향에 맞춘 최신 가전을 바로 설치해 쓰고 싶은 분</p></div><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 9l2 6 2-5 2 5 2-6"/><path d="M7 12h10"/></svg></div><h3>목돈 대신 월 납입</h3><p>큰돈을 한 번에 쓰지 않고, 매달 정해진 금액(상품별 월 납입금)으로 나눠 관리하고 싶은 분</p></div><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg></div><h3>오래 쓰며 환급까지</h3><p>한 가전을 오래 쓸 계획이라, 만기까지 납입하고 조건을 채워 납입금을 돌려받고 싶은 분</p></div></div></div></section>
+<section class="usecase" id="usecase"><div class="wrap"><div class="sec-head"><div class="tag">FOR YOU</div><h2>이런 경우에 살펴보세요</h2><p>목돈 부담 없이 필요한 가전을 갖추고, 조건을 채우면 납입금을 돌려받는 구조를 찾는 분들께 맞습니다.</p></div><div class="uc-grid"><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></div><h3>혼수·신혼 준비</h3><p>TV·냉장고·세탁기 등 여러 가전을 한 번에 갖춰야 하는데, 목돈을 한 번에 쓰기는 부담스러운 분</p></div><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div><h3>이사·새집 입주</h3><p>새 집 구조와 취향에 맞춘 최신 가전을 바로 설치해 쓰고 싶은 분</p></div><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 9l2 6 2-5 2 5 2-6"/><path d="M7 12h10"/></svg></div><h3>목돈 대신 월 납입</h3><p>큰돈을 한 번에 쓰지 않고, 매달 정해진 금액(상품별 월 납입금)으로 나눠 관리하고 싶은 분</p></div><div class="uc-card"><div class="uc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg></div><h3>오래 쓰며 환급까지</h3><p>한 가전을 오래 쓸 계획이라, 만기까지 납입하고 조건을 채워 납입금을 돌려받고 싶은 분</p></div></div></div></section>
 <section class="faq" id="faq"><div class="wrap"><div class="sec-head"><div class="tag">FAQ</div><h2>자주 묻는 질문</h2><p>가입 전에 가장 많이 물어보시는 내용을 정리했습니다.</p></div><div class="faq-list"><details class="faq-item"><summary>정말 납입금을 100% 돌려받나요?</summary><div class="faq-a">세 가지 조건을 <b>모두</b> 충족하면 그동안 낸 납입금을 100% 환급받습니다. ① 상조·하이브리드(여행·크루즈·웨딩 등) 서비스 미사용 ② 180회 납입 후 20회 거치까지 마친 만기(200회) ③ 만기 익월 이후 해약 신청. 하나라도 빠지면 환급 대상이 아닙니다. 예금·투자 상품이 아니며 원금 보장이나 이자 수익을 제공하지 않습니다.</div></details><details class="faq-item"><summary>매달 렌탈료가 따로 나가나요?</summary><div class="faq-a">아니요. 매달 내는 금액은 상품별 월 납입금 하나이고, 가전 렌탈 몫은 그 안에 들어 있습니다. 다만 처음 60회는 같은 금액이 렌탈 몫과 상조 몫 두 건으로 나뉘어 출금되고(출금일·계좌가 다를 수 있습니다), 61회부터는 한 건으로 나갑니다. 두 건을 합친 금액은 월 납입금과 같습니다.</div></details><details class="faq-item"><summary>가전은 언제, 어떻게 설치되나요?</summary><div class="faq-a">첫 회 납입이 끝나면 배송·설치가 진행되며 통상 1~4주가 걸립니다. 제조사 사정으로 일정이 달라지거나 같은 급의 모델로 바뀔 수 있어, 정확한 시점은 상담 때 안내해 드립니다.</div></details><details class="faq-item"><summary>중간에 해지하면 어떻게 되나요?</summary><div class="faq-a">만기(200회) 전에 해지하면 환급 조건을 충족하지 못해 납입금 100% 환급 대상이 아닙니다. 상조 부분은 공정거래위원회 해약환급금 기준이 적용되고, 가전 렌탈은 남은 렌탈료를 정상 납입해야 합니다. 가전은 렌탈 60개월 동안 소유권이 회사에 유보되어 기간 중 재판매할 수 없으며, 납입을 중단하면 채권추심과 신용도에 영향을 줄 수 있습니다.</div></details><details class="faq-item"><summary>상조 서비스도 포함인가요?</summary><div class="faq-a">네, 선불식 할부거래 결합상품이라 상조 서비스가 상품별 횟수(1~4회)만큼 들어 있고, 여행·크루즈·웨딩 등으로 바꿔 쓰는 하이브리드 서비스도 있습니다. 다만 이 서비스를 사용하면 만기 납입금 환급 대상에서 제외됩니다. 리조트 등 일반 멤버십 혜택은 이용해도 환급에 영향이 없습니다.</div></details><details class="faq-item"><summary>안전한가요? 원금은 보장되나요?</summary><div class="faq-a">선수금의 50%가 상조보증공제조합을 통해 보전됩니다(할부거래법). 다만 예금자보호 대상 금융상품은 아니며 '100% 안전'이나 원금 보장을 뜻하지는 않습니다. 가입 연령·신용 조건이 있어 상담 때 함께 확인해 드리며, 실제 계약 조건은 계약서를 기준으로 합니다.</div></details></div></div></section>
 
 
