@@ -478,6 +478,45 @@ header{background:#fff;border-bottom:1px solid var(--line)}
 .co-ex .res{background:#ffd43b;border-radius:8px;padding:4px 10px}
 .co-note{margin:12px 0 0;font-size:13px;color:var(--muted);line-height:1.7}
 @media(max-width:720px){.cardoff{padding:40px 0}.co-grid{grid-template-columns:1fr}}
+
+.calc{padding:56px 0;background:#fff}
+.calc-box{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:18px}
+.calc-in,.calc-out{background:var(--mist);border-radius:16px;padding:22px}
+.calc-step{margin:0 0 18px}
+.calc-step>b{display:block;margin:0 0 8px;font-size:15px;color:var(--ink)}
+.calc-step>b i{font-style:normal;display:inline-block;min-width:22px;height:22px;line-height:22px;margin-right:6px;border-radius:50%;background:var(--navy);color:#fff;text-align:center;font-size:12.5px}
+.calc-seg{display:flex;gap:6px;flex-wrap:wrap}
+.calc-seg button{flex:1 1 0;min-width:84px;padding:11px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer}
+.calc-seg button small{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
+.calc-seg button[aria-pressed=true]{border-color:var(--navy);background:var(--navy);color:#fff}
+.calc-seg button[aria-pressed=true] small{color:var(--on-navy)}
+.calc select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+.calc-pick{display:flex;gap:12px;align-items:center;margin-top:10px;background:#fff;border-radius:10px;padding:8px}
+.calc-pick img{width:84px;height:64px;object-fit:contain;flex:none}
+.calc-pick span{font-size:13.5px;color:var(--muted);line-height:1.45}
+.calc-row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.calc-big{margin:0 0 4px;font-size:14px;color:var(--muted)}
+.calc-big strong{display:block;font-size:34px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.calc-big em{font-style:normal;font-size:15px;font-weight:700;color:var(--ok)}
+.calc-tl{list-style:none;margin:14px 0 0;padding:0;background:#fff;border-radius:12px}
+.calc-tl li{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;border-top:1px solid var(--line);font-size:14.5px}
+.calc-tl li:first-child{border-top:0}
+.calc-tl li b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.calc-tl li small{display:block;color:var(--muted);font-size:12.5px}
+.calc-sum{display:flex;justify-content:space-between;margin:10px 2px 0;font-size:14.5px}
+.calc-sum b{font-variant-numeric:tabular-nums}
+.calc-ref{margin-top:16px;background:#fff;border:2px solid var(--navy);border-radius:12px;padding:14px}
+.calc-ref p{margin:0 0 8px;font-size:15px}
+.calc-ref p b{font-size:20px;font-variant-numeric:tabular-nums}
+.calc-ref ol{margin:0;padding-left:20px;font-size:13.5px;color:var(--ink);line-height:1.7}
+.calc-ref small{display:block;margin-top:6px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.calc-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.calc-cta a,.calc-cta button{display:block;padding:14px 8px;border-radius:10px;font:inherit;font-size:15.5px;font-weight:800;text-align:center;text-decoration:none;cursor:pointer}
+.calc-cta .c1{background:var(--navy);color:#fff;border:0}
+.calc-cta .c2{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.calc-note{margin:12px 0 0;font-size:12.5px;color:var(--muted);line-height:1.7}
+@media(max-width:820px){.calc{padding:40px 0}.calc-box{grid-template-columns:1fr}.calc-big strong{font-size:30px}
+.calc-in,.calc-out{padding:16px}.calc-sum{flex-direction:column;gap:2px}.calc-cta a,.calc-cta button{font-size:14.5px;padding:13px 4px}}
 </style>
 </head>
 <body>
@@ -487,6 +526,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
     <a class="logo" href="index.html"><b>보람상조피플</b><span>가전결합 멤버십</span></a>
     <nav class="nav-links">
       <a href="index.html#tiers">구좌 안내</a>
+      <a href="index.html#calc">납입 계산</a>
       <a href="index.html#cardoff">카드 할인</a>
       <a href="index.html#how">결합 구조</a>
       <a href="index.html#service">상조 서비스</a>
@@ -620,6 +660,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
   </div>
 </section>
 <section class="cardoff" id="cardoff"><div class="wrap"><div class="sec-head"><h2>제휴카드로 내면 매달 덜 내요</h2><p>보람상조 제휴카드를 새로 만들어 상조 납입금 결제 카드로 등록하면, 지난달 카드를 쓴 만큼 이번 달 카드값에서 깎아 줍니다.</p></div><div class="co-grid"><div class="co-card" style="--c:#ffbc00"><h3>KB국민카드</h3><p class="max">한 달 최대 <b>27,000원</b> 할인</p><table><tr><td>전월 카드 사용 40만원 이상</td><td>-15,000원</td></tr><tr><td>전월 카드 사용 80만원 이상</td><td>-19,000원</td></tr><tr><td>전월 카드 사용 120만원 이상</td><td>-27,000원</td></tr></table></div><div class="co-card" style="--c:#00857a"><h3>하나카드</h3><p class="max">한 달 최대 <b>19,000원</b> 할인</p><table><tr><td>전월 카드 사용 30만원 이상</td><td>-12,000원</td></tr><tr><td>전월 카드 사용 100만원 이상</td><td>-19,000원</td></tr></table></div><div class="co-card" style="--c:#d6001c"><h3>롯데카드</h3><p class="max">한 달 최대 <b>25,000원</b> 할인</p><table><tr><td>전월 카드 사용 30만원 이상</td><td>-10,000원</td></tr><tr><td>전월 카드 사용 70만원 이상</td><td>-15,000원</td></tr><tr><td>전월 카드 사용 150만원 이상</td><td>-25,000원</td></tr></table></div></div><div class="co-ex"><span>예) 상조 납입금 월 <b>40,000원</b>을 롯데카드로 내고 지난달 70만원 이상 썼다면</span><span class="eq">→</span><span>카드값에서 <b>-15,000원</b></span><span class="eq">=</span><span class="res">실제 부담 <b>25,000원</b></span></div><p class="co-note">※ 청구할인은 카드사 혜택이라 카드사 사정에 따라 언제든 바뀌거나 끝날 수 있습니다. 결합상품(피플S580)은 상조 납입금 결제분에 적용되며, 적용 여부와 금액은 카드 발급·등록 때 카드사와 보람상조피플(주) 기준으로 확인해 드립니다. 할인은 납입금 자체가 줄어드는 것이 아니라 카드 청구 금액에서 빠지는 방식입니다.</p></div></section>
+<section class="calc" id="calc"><div class="wrap"><div class="sec-head"><h2>내 월 납입금 계산해 보기</h2><p>구좌와 가전을 고르면 200회 동안 매달 내는 돈과 만기 환급 조건을 한 번에 보여 드립니다.</p></div><div class="calc-box"><div class="calc-in"><div class="calc-step"><b><i>1</i>구좌</b><div class="calc-seg" id="calcSeg"><button type="button" data-gj="1구좌">싱글<small>월 34,500원</small></button><button type="button" data-gj="2구좌">더블<small>월 69,000원</small></button><button type="button" data-gj="3구좌">트리플<small>월 103,500원</small></button></div></div><div class="calc-step"><b><i>2</i>가전</b><select id="calcItem" aria-label="가전 선택"></select><div class="calc-pick" id="calcPick"></div></div><div class="calc-step" style="margin:0"><b><i>3</i>제휴카드 <small style="font-weight:500;color:var(--muted)">(선택)</small></b><div class="calc-row2"><select id="calcCard" aria-label="제휴카드"><option value="">카드 안 씀</option><option value="KB국민카드">KB국민카드</option><option value="하나카드">하나카드</option><option value="롯데카드">롯데카드</option></select><select id="calcSpend" aria-label="지난달 카드 사용액"></select></div></div></div><div class="calc-out" aria-live="polite"><p class="calc-big">1~160회 월 납입금<strong id="calcMonthly"></strong></p><ul class="calc-tl" id="calcTl"></ul><div class="calc-sum"><span>200회 총 납입금</span><b id="calcTotal"></b></div><div class="calc-ref"><p>만기 1개월 뒤 받는 금액 <b id="calcRefund"></b></p><ol><li>상조·가전 금액 모두 완납</li><li>만기(200회) 경과</li><li>상조 서비스를 쓰지 않고 해약 요청</li></ol><small>세 조건을 <b>모두</b> 채워야 가입금액 전액을 돌려받습니다. 하나라도 빠지면 회사의 해약환급금 기준이 적용되고, 60회 안에 해약하면 남은 가전 렌탈료를 내야 합니다. 예·적금이 아니며 이자는 없습니다.</small></div><div class="calc-cta"><a class="c1" id="calcApply" href="#eapply" target="_blank" rel="noopener">이 가전으로 전자청약</a><button type="button" class="c2" id="calcAsk">이 조건으로 상담 신청</button></div><p class="calc-note" id="calcCardNote">※ 카드 청구할인은 납입금이 줄어드는 것이 아니라 카드 청구 금액에서 빠지는 방식이며, 카드사 사정에 따라 바뀌거나 끝날 수 있습니다. 161회 이후 적용 여부는 상담 때 확인해 드립니다.</p><p class="calc-note">※ 계산 결과는 이해를 돕기 위한 안내입니다. 실제 조건은 상품설명서·계약서를 기준으로 하며, 신용도에 따라 청약이 거절될 수 있습니다.</p></div></div></div></section>
 
 <section class="struct" id="how">
   <div class="wrap">
@@ -923,4 +964,53 @@ if(bestGrid){ bestGrid.innerHTML=PRODUCTS.filter(function(p){return p.best;}).ma
 })();
 </script>
 
+<script>
+(function(){
+  var T={"1구좌":{n:1,label:"싱글"},"2구좌":{n:2,label:"더블"},"3구좌":{n:3,label:"트리플"}};
+  var CARD={"KB국민카드": [["40만원 이상", 15000], ["80만원 이상", 19000], ["120만원 이상", 27000]], "하나카드": [["30만원 이상", 12000], ["100만원 이상", 19000]], "롯데카드": [["30만원 이상", 10000], ["70만원 이상", 15000], ["150만원 이상", 25000]]};
+  var $=function(id){return document.getElementById(id)};
+  var won=function(v){return v.toLocaleString("ko-KR")+"원"};
+  var man=function(v){return (v/10000).toLocaleString("ko-KR")+"만원"};
+  var gj="1구좌";
+  function fill(){
+    var sel=$("calcItem"),list=PRODUCTS.filter(function(p){return p.gooja===gj});
+    sel.innerHTML=list.map(function(p){return '<option value="'+p.id+'">['+p.cat+'] '+p.title.replace(/</g,"&lt;")+'</option>'}).join("");
+    [].forEach.call(document.querySelectorAll("#calcSeg button"),function(b){b.setAttribute("aria-pressed",b.dataset.gj===gj)});
+  }
+  function cardRows(){
+    var c=$("calcCard").value,sel=$("calcSpend");
+    sel.disabled=!c;
+    sel.innerHTML=c?CARD[c].map(function(r,i){return '<option value="'+i+'">지난달 '+r[0]+' 사용</option>'}).join(""):'<option>카드 할인 없음</option>';
+  }
+  function calc(){
+    var p=PRODUCTS.filter(function(x){return x.id===$("calcItem").value})[0]; if(!p) return;
+    var t=T[p.gooja],m=p.monthly,last=7000*t.n,total=m*160+last*40;
+    var c=$("calcCard").value,d=c?CARD[c][+$("calcSpend").value][1]:0;
+    $("calcPick").innerHTML=(p.thumb?'<img src="'+p.thumb+'" alt="">':'')+'<span><b style="color:var(--ink)">'+p.title.replace(/</g,"&lt;")+'</b><br>'+(p.model||"")+'</span>';
+    $("calcMonthly").innerHTML=won(m)+(d?' <em>카드 청구할인 시 '+won(m-d)+'</em>':'');
+    $("calcTl").innerHTML=
+      '<li><span>1~60회<small>상조 납입금 + 가전 렌탈료'+(t.n===1?' (4,500원 + 30,000원)':'')+'</small></span><b>'+won(m)+'</b></li>'+
+      '<li><span>61~160회<small>상조 납입금</small></span><b>'+won(m)+'</b></li>'+
+      '<li><span>161~200회<small>상조 납입금</small></span><b>'+won(last)+'</b></li>';
+    $("calcTotal").textContent=won(total)+" ("+man(total)+")";
+    $("calcRefund").textContent=man(total);
+    $("calcCardNote").style.display=d?"block":"none";
+    $("calcApply").href=p.url;
+    $("calcAsk").dataset.p="[계산기] "+t.label+" · "+p.title+" · 월 "+won(m)+(c?" · "+c:"");
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    if(!$("calc")) return;
+    $("calcSeg").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;gj=b.dataset.gj;fill();calc()});
+    $("calcItem").addEventListener("change",calc);
+    $("calcCard").addEventListener("change",function(){cardRows();calc()});
+    $("calcSpend").addEventListener("change",calc);
+    $("calcAsk").addEventListener("click",function(){
+      var f=$("cfProduct"); if(f) f.value=this.dataset.p;
+      var s=$("consult"); if(s) s.scrollIntoView({behavior:"smooth"});
+      var ph=document.querySelector('#consultForm input[name=phone]'); if(ph) setTimeout(function(){ph.focus({preventScroll:true})},600);
+    });
+    fill();cardRows();calc();
+  });
+})();
+</script>
 </body></html>
