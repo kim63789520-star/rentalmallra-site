@@ -456,6 +456,22 @@ header{background:#fff;border-bottom:1px solid var(--line)}
 @media(max-width:720px){.manager{padding:20px 0 28px}.mg{grid-template-columns:88px 1fr;column-gap:16px;row-gap:0;align-items:center}.mg-body{display:contents}.mg-photo{grid-column:1;grid-row:1/3;width:88px;height:88px;max-height:none;object-fit:cover;object-position:50% 12%;border-radius:50%}.mg-role{grid-column:2;grid-row:1;align-self:end;font-size:12.5px}.mg-name{grid-column:2;grid-row:2;align-self:start;margin:4px 0 0;font-size:34px;letter-spacing:-1px}.mg-lead{grid-column:1/-1;margin:16px 0 0;font-size:16px}.mg-cta{grid-column:1/-1;margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.mg-cta .btn{text-align:center;padding:13px 6px}.mg-cta .btn-line{grid-column:1/-1}.mg-rules{grid-column:1/-1;margin:18px 0 0}.mg-rules li{font-size:13.5px;padding:10px 0}.mg-note{grid-column:1/-1}}
 
 .ea-mini{margin-top:10px;font-size:13.5px;font-weight:800;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+
+.cardoff{padding:56px 0;background:var(--mist)}
+.co-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.co-card{background:#fff;border-radius:14px;padding:20px 20px 14px;border-top:6px solid var(--c)}
+.co-card h3{margin:0 0 2px;font-size:19px;color:var(--ink)}
+.co-card .max{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.co-card .max b{color:var(--ink);font-size:17px}
+.co-card table{width:100%;border-collapse:collapse;font-size:14.5px}
+.co-card td{padding:9px 0;border-top:1px solid var(--line)}
+.co-card td:last-child{text-align:right;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.co-ex{margin-top:16px;background:#fff;border-radius:14px;padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;font-size:15px}
+.co-ex b{font-size:18px;font-variant-numeric:tabular-nums}
+.co-ex .eq{font-weight:800;color:var(--muted)}
+.co-ex .res{background:#ffd43b;border-radius:8px;padding:4px 10px}
+.co-note{margin:12px 0 0;font-size:13px;color:var(--muted);line-height:1.7}
+@media(max-width:720px){.cardoff{padding:40px 0}.co-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -465,6 +481,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
     <a class="logo" href="index.html"><b>보람상조피플</b><span>가전결합 멤버십</span></a>
     <nav class="nav-links">
       <a href="index.html#tiers">구좌 안내</a>
+      <a href="index.html#cardoff">카드 할인</a>
       <a href="index.html#how">결합 구조</a>
       <a href="index.html#service">상조 서비스</a>
       <a href="index.html#refund">환급 조건</a>
@@ -555,7 +572,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
     </div>
   </div>
   </div>
-  <div class="hero-terms"><b>가입 전 확인</b><p>상조 서비스 계약과 가전 할부 계약이 따로 체결되는 선불식 할부거래 결합상품입니다. 상조·가전 금액을 모두 완납하고 만기(200회)가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청해야 만기 환급이 적용됩니다. 중도 해약하면 납입 회차에 따른 해약환급금이 적용되고, 가전 잔여 할부금을 일시 또는 분할로 내야 합니다.</p></div>
+  <div class="hero-terms"><b>가입 전 확인</b><p>상조 서비스 계약과 가전 렌탈 계약이 따로 체결되는 선불식 할부거래 결합상품입니다. 상조·가전 금액을 모두 완납하고 만기(200회)가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청해야 만기 환급이 적용됩니다. 중도 해약하면 납입 회차에 따른 해약환급금이 적용되고, 의무 사용 기간(60회) 안에 해약하면 남은 가전 렌탈료(잔여 할부대금)를 내야 합니다.</p></div>
   </div>
 </div>
 <div class="membership-summary">
@@ -592,15 +609,16 @@ header{background:#fff;border-bottom:1px solid var(--line)}
 <section id="tiers">
   <div class="wrap">
     <div class="sec-head"><h2>싱글 · 더블 · 트리플 월 납입금</h2><p>고를 수 있는 가전이 구좌마다 다릅니다. 처음 160회는 아래 월 납입금을, 이후 40회는 더 적은 금액을 냅니다.</p></div>
-    <div class="tiers"><div class="tier"><h3>싱글 · 1구좌</h3><div class="price">34,500<small>원 / 월</small></div><div class="sub">160회 34,500원 + 이후 40회 7,000원 · 총 580만원</div><ul><li>고를 수 있는 가전 17종</li><li>상조 서비스 계약 + 가전 할부 계약</li><li>만기(200회) 경과 · 상조 서비스 미사용 · 해약 요청 시 만기 환급*</li></ul></div><div class="tier feature"><div class="badge">가전 최다</div><h3>더블 · 2구좌</h3><div class="price">69,000<small>원 / 월</small></div><div class="sub">160회 69,000원 + 이후 40회 14,000원 · 총 1,160만원</div><ul><li>고를 수 있는 가전 30종</li><li>상조 서비스 계약 + 가전 할부 계약</li><li>만기(200회) 경과 · 상조 서비스 미사용 · 해약 요청 시 만기 환급*</li></ul></div><div class="tier"><h3>트리플 · 3구좌</h3><div class="price">103,500<small>원 / 월</small></div><div class="sub">160회 103,500원 + 이후 40회 21,000원 · 총 1,740만원</div><ul><li>고를 수 있는 가전 15종</li><li>상조 서비스 계약 + 가전 할부 계약</li><li>만기(200회) 경과 · 상조 서비스 미사용 · 해약 요청 시 만기 환급*</li></ul></div></div>
-    <p class="tiers-note">* 싱글은 조건을 모두 채우면 상조 납입금 100%(400만원)와 만기축하금(180만원)을 받습니다. 더블·트리플 금액과 출금 구성은 상담 때 계약서로 보여 드립니다. 조건을 하나라도 못 채우면 회사의 해약환급금 기준이 적용됩니다.</p>
+    <div class="tiers"><div class="tier"><h3>싱글 · 1구좌</h3><div class="price">34,500<small>원 / 월</small></div><div class="sub">160회 34,500원 + 이후 40회 7,000원 · 총 580만원</div><ul><li>고를 수 있는 가전 17종</li><li>상조 서비스 계약 + 가전 렌탈 계약</li><li>만기(200회) 경과 · 상조 서비스 미사용 · 해약 요청 시 만기 환급*</li></ul></div><div class="tier feature"><div class="badge">가전 최다</div><h3>더블 · 2구좌</h3><div class="price">69,000<small>원 / 월</small></div><div class="sub">160회 69,000원 + 이후 40회 14,000원 · 총 1,160만원</div><ul><li>고를 수 있는 가전 30종</li><li>상조 서비스 계약 + 가전 렌탈 계약</li><li>만기(200회) 경과 · 상조 서비스 미사용 · 해약 요청 시 만기 환급*</li></ul></div><div class="tier"><h3>트리플 · 3구좌</h3><div class="price">103,500<small>원 / 월</small></div><div class="sub">160회 103,500원 + 이후 40회 21,000원 · 총 1,740만원</div><ul><li>고를 수 있는 가전 15종</li><li>상조 서비스 계약 + 가전 렌탈 계약</li><li>만기(200회) 경과 · 상조 서비스 미사용 · 해약 요청 시 만기 환급*</li></ul></div></div>
+    <p class="tiers-note">* 조건을 모두 채우면 만기 1개월 뒤 가입금액 전액(싱글 580만원 · 더블 1,160만원 · 트리플 1,740만원)을 돌려받습니다. 처음 60회는 월 납입금이 상조 납입금과 가전 렌탈료로 나뉘어 나갑니다(싱글 4,500원 + 30,000원). 조건을 하나라도 못 채우면 회사의 해약환급금 기준이 적용됩니다.</p>
   </div>
 </section>
+<section class="cardoff" id="cardoff"><div class="wrap"><div class="sec-head"><h2>제휴카드로 내면 매달 덜 내요</h2><p>보람상조 제휴카드를 새로 만들어 상조 납입금 결제 카드로 등록하면, 지난달 카드를 쓴 만큼 이번 달 카드값에서 깎아 줍니다.</p></div><div class="co-grid"><div class="co-card" style="--c:#ffbc00"><h3>KB국민카드</h3><p class="max">한 달 최대 <b>27,000원</b> 할인</p><table><tr><td>전월 카드 사용 40만원 이상</td><td>-15,000원</td></tr><tr><td>전월 카드 사용 80만원 이상</td><td>-19,000원</td></tr><tr><td>전월 카드 사용 120만원 이상</td><td>-27,000원</td></tr></table></div><div class="co-card" style="--c:#00857a"><h3>하나카드</h3><p class="max">한 달 최대 <b>19,000원</b> 할인</p><table><tr><td>전월 카드 사용 30만원 이상</td><td>-12,000원</td></tr><tr><td>전월 카드 사용 100만원 이상</td><td>-19,000원</td></tr></table></div><div class="co-card" style="--c:#d6001c"><h3>롯데카드</h3><p class="max">한 달 최대 <b>25,000원</b> 할인</p><table><tr><td>전월 카드 사용 30만원 이상</td><td>-10,000원</td></tr><tr><td>전월 카드 사용 70만원 이상</td><td>-15,000원</td></tr><tr><td>전월 카드 사용 150만원 이상</td><td>-25,000원</td></tr></table></div></div><div class="co-ex"><span>예) 상조 납입금 월 <b>40,000원</b>을 롯데카드로 내고 지난달 70만원 이상 썼다면</span><span class="eq">→</span><span>카드값에서 <b>-15,000원</b></span><span class="eq">=</span><span class="res">실제 부담 <b>25,000원</b></span></div><p class="co-note">※ 청구할인은 카드사 혜택이라 카드사 사정에 따라 언제든 바뀌거나 끝날 수 있습니다. 결합상품(피플S580)은 상조 납입금 결제분에 적용되며, 적용 여부와 금액은 카드 발급·등록 때 카드사와 보람상조피플(주) 기준으로 확인해 드립니다. 할인은 납입금 자체가 줄어드는 것이 아니라 카드 청구 금액에서 빠지는 방식입니다.</p></div></section>
 
 <section class="struct" id="how">
   <div class="wrap">
     <div class="sec-head"><h2>어떻게 이런 구조가 되나요</h2><p>상조 서비스와 가전을 함께 가입하는 선불식 할부거래 결합상품입니다. 계약은 두 건으로 따로 체결됩니다.</p></div>
-    <ol class="steps"><li class="step"><h4>가전 선택</h4><p>싱글·더블·트리플 중 원하는 구좌의 가전을 고릅니다.</p></li><li class="step"><h4>계약 두 건</h4><p>보람상조피플(주)와 상조 서비스 계약, 가전 할부 계약을 각각 체결합니다.</p></li><li class="step"><h4>매달 납입</h4><p>처음 160회는 구좌별 월 납입금, 이후 40회는 더 적은 금액으로 200회를 냅니다.</p></li><li class="step"><h4>만기 환급</h4><p>상조·가전 금액을 완납하고 만기가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청하면 만기 환급을 받습니다.</p></li></ol>
+    <ol class="steps"><li class="step"><h4>가전 선택</h4><p>싱글·더블·트리플 중 원하는 구좌의 가전을 고릅니다.</p></li><li class="step"><h4>계약 두 건</h4><p>보람상조피플(주)와 상조 서비스 계약, (주)LG헬로비전과 가전 렌탈 계약을 각각 체결합니다. 60개월 렌탈이 끝나면 가전은 고객 소유가 됩니다.</p></li><li class="step"><h4>매달 납입</h4><p>처음 160회는 구좌별 월 납입금, 이후 40회는 더 적은 금액으로 200회를 냅니다.</p></li><li class="step"><h4>만기 환급</h4><p>상조·가전 금액을 완납하고 만기가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청하면 만기 환급을 받습니다.</p></li></ol>
   </div>
 </section>
 
@@ -614,7 +632,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
         <span class="tag">길 1 · 쓰지 않고 돌려받기</span>
         <h3>만기 환급</h3>
         <p>상조 서비스를 쓰지 않고 상조·가전 금액을 완납한 뒤, 만기(200회)가 지나 해약을 요청하면 상조 납입금 100%와 만기축하금을 받습니다.</p>
-        <ul><li>세 조건을 모두 채워야 합니다 → <a href="#refund">환급 조건</a></li><li>가전은 할부로 먼저 받아 씁니다. 다른 사람에게 양도하면 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</li></ul>
+        <ul><li>세 조건을 모두 채워야 합니다 → <a href="#refund">환급 조건</a></li><li>가전은 60개월 렌탈로 먼저 받아 쓰고, 렌탈이 끝나면 소유권이 고객에게 무료로 넘어옵니다. 다른 사람에게 양도하면 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</li></ul>
       </article>
       <article class="sv-card">
         <span class="tag">길 2 · 서비스로 쓰기</span>
@@ -641,21 +659,21 @@ header{background:#fff;border-bottom:1px solid var(--line)}
   <div class="wrap">
     <h2>만기 환급, 세 가지 조건</h2><p class="rlead">아래 조건을 <b>모두</b> 채워야 만기 환급이 적용됩니다. 하나라도 빠지면 회사의 해약환급금 기준이 적용됩니다.</p>
     <ol class="conds"><li><div class="n">조건 1</div><b>상조·가전 금액 완납</b><span>상조 상품과 가전 상품 금액을 모두 완납해야 합니다.</span></li><li><div class="n">조건 2</div><b>만기(200회) 경과</b><span>만기 회차인 200회가 지나야 합니다.</span></li><li><div class="n">조건 3</div><b>상조 서비스 미사용 · 해약 요청</b><span>상조 서비스를 쓰지 않고 해약을 요청해야 합니다.</span></li></ol>
-    <p class="allthree">싱글 기준 <em>상조 납입금 100%(400만원) + 만기축하금(180만원)</em>을 받습니다. 만기 100% 환급은 200회 납입 완료 후 다음 달에 지급됩니다. 더블·트리플 금액은 상담 때 안내합니다.</p>
+    <p class="allthree">만기 1개월 뒤 <em>가입금액 전액</em>을 돌려받습니다 — 싱글 580만원 · 더블 1,160만원 · 트리플 1,740만원. 가전은 렌탈이 끝나 이미 고객 소유입니다.</p>
   </div>
 </section>
 
 
 
 <section class="usecase" id="usecase"><div class="wrap"><div class="sec-head"><h2>이런 분들께 맞습니다</h2><p>목돈 없이 필요한 가전을 먼저 받고, 만기에 조건(상조·가전 완납 · 만기 200회 경과 · 상조 서비스 미사용 후 해약 요청)을 채워 상조 납입금과 만기축하금을 받는 구조를 찾는 분들께 맞습니다.</p></div><div class="uc-grid"><div class="uc-card"><h3>혼수·신혼 준비</h3><p>TV·냉장고·세탁기 등 여러 가전을 한 번에 갖춰야 하는데, 목돈을 한 번에 쓰기는 부담스러운 분</p></div><div class="uc-card"><h3>이사·새집 입주</h3><p>새 집 구조와 취향에 맞춘 최신 가전을 바로 설치해 쓰고 싶은 분</p></div><div class="uc-card"><h3>목돈 대신 월 납입</h3><p>큰돈을 한 번에 쓰지 않고, 매달 정해진 금액(구좌별 월 납입금)으로 나눠 관리하고 싶은 분</p></div><div class="uc-card"><h3>오래 쓰며 환급까지</h3><p>만기까지 납입하고 조건을 모두 채워 상조 납입금과 만기축하금을 받고 싶은 분</p></div></div></div></section>
-<section class="faq" id="faq"><div class="wrap"><div class="sec-head"><h2>자주 묻는 질문</h2><p>가입 전에 자주 물어보시는 내용을 정리했습니다.</p></div><div class="faq-list"><details class="faq-item"><summary>만기에 정말 돌려받나요?</summary><div class="faq-a">상조·가전 금액을 모두 완납하고 만기(200회)가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청하면, 싱글 기준 상조 납입금 100%(400만원)와 만기축하금(180만원)을 받습니다. 조건을 하나라도 못 채우면 회사의 해약환급금 기준이 적용됩니다. 예금·투자 상품이 아니며 원금 보장이나 이자 수익을 제공하지 않습니다.</div></details><details class="faq-item"><summary>가전 값은 따로 내나요?</summary><div class="faq-a">상조 서비스 계약과 가전 할부 계약이 따로 체결되고, 월 납입금은 구좌별 금액(싱글 34,500원 · 더블 69,000원 · 트리플 103,500원, 160회 이후 40회는 더 적은 금액)입니다. 출금 구성은 상담 때 계약서로 보여 드립니다.</div></details><details class="faq-item"><summary>가전은 언제, 어떻게 설치되나요?</summary><div class="faq-a">계약이 끝나면 배송·설치가 진행됩니다. 제품마다 일정이 달라 정확한 시점은 상담 때 안내해 드립니다.</div></details><details class="faq-item"><summary>중간에 해지하면 어떻게 되나요?</summary><div class="faq-a">만기 전에 해약하면 납입 회차에 따른 해약환급금이 적용되고, 가전 잔여 할부금은 일시 또는 분할로 내야 합니다. 만기 환급 대상이 아닙니다.</div></details><details class="faq-item"><summary>상조 서비스도 쓸 수 있나요?</summary><div class="faq-a">네. 장례·웨딩·여행 등 라이프 서비스로 쓸 수 있습니다. 가입 기간 중 이용하면 잔여 납입금을 완납한 뒤 이용하며, 서비스를 쓴 계약은 만기 환급 대상에서 빠집니다.</div></details><details class="faq-item"><summary>가족에게 넘길 수 있나요?</summary><div class="faq-a">양도·양수할 수 있지만, 양도하면 만기에 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</div></details><details class="faq-item"><summary>안전한가요?</summary><div class="faq-a">보람상조피플(주)는 할부거래법에 따라 선불식 할부거래업을 등록했고, 한국상조공제조합과의 공제계약으로 선수금의 50%를 보전합니다. 예금자보호 대상 금융상품은 아니며 실제 조건은 계약서를 기준으로 합니다.</div></details></div></div></section>
+<section class="faq" id="faq"><div class="wrap"><div class="sec-head"><h2>자주 묻는 질문</h2><p>가입 전에 자주 물어보시는 내용을 정리했습니다.</p></div><div class="faq-list"><details class="faq-item"><summary>만기에 정말 돌려받나요?</summary><div class="faq-a">상조·가전 금액을 모두 완납하고 만기(200회)가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청하면, 만기 1개월 뒤 가입금액 전액(싱글 580만원 · 더블 1,160만원 · 트리플 1,740만원)을 받습니다. 조건을 하나라도 못 채우면 회사의 해약환급금 기준이 적용됩니다. 예금·투자 상품이 아니며 원금 보장이나 이자 수익을 제공하지 않습니다.</div></details><details class="faq-item"><summary>가전 값은 따로 내나요?</summary><div class="faq-a">상조 서비스 계약과 가전 렌탈 계약이 따로 체결되고, 처음 60회는 월 납입금이 상조 납입금과 가전 렌탈료로 나뉘어 나갑니다(싱글 4,500원 + 30,000원 = 34,500원). 61~160회는 상조 34,500원, 161~200회는 7,000원입니다. 이 밖에 따로 내는 가전 값은 없습니다.</div></details><details class="faq-item"><summary>가전은 언제, 어떻게 설치되나요?</summary><div class="faq-a">계약이 끝나면 배송·설치가 진행됩니다. 제품마다 일정이 달라 정확한 시점은 상담 때 안내해 드립니다.</div></details><details class="faq-item"><summary>중간에 해지하면 어떻게 되나요?</summary><div class="faq-a">만기 전에 해약하면 납입 회차에 따른 해약환급금이 적용되고, 의무 사용 기간(60회) 안에 해약하면 남은 가전 렌탈료(잔여 할부대금)를 내야 합니다. 만기 환급 대상이 아닙니다.</div></details><details class="faq-item"><summary>상조 서비스도 쓸 수 있나요?</summary><div class="faq-a">네. 장례·웨딩·여행 등 라이프 서비스로 쓸 수 있습니다. 가입 기간 중 이용하면 잔여 납입금을 완납한 뒤 이용하며, 서비스를 쓴 계약은 만기 환급 대상에서 빠집니다.</div></details><details class="faq-item"><summary>가족에게 넘길 수 있나요?</summary><div class="faq-a">양도·양수할 수 있지만, 양도하면 만기에 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</div></details><details class="faq-item"><summary>안전한가요?</summary><div class="faq-a">보람상조피플(주)는 할부거래법에 따라 선불식 할부거래업을 등록했고, 한국상조공제조합과의 공제계약으로 선수금의 50%를 보전합니다. 예금자보호 대상 금융상품은 아니며 실제 조건은 계약서를 기준으로 합니다.</div></details></div></div></section>
 
 
 <section class="notice">
   <div class="wrap">
     <div class="notice-inner">
       <h3>가입 전 꼭 확인하세요</h3>
-      <ul><li><b>선불식 할부거래 결합상품입니다.</b> 예·적금이나 금융투자 상품이 아니며, 원금 보장이나 이자 수익을 제공하지 않습니다.</li><li><b>계약은 두 건</b> — 상조 서비스 계약과 가전 할부 계약이 별도로 체결됩니다.</li><li><b>만기 환급</b> — 상조·가전 금액 완납, 만기(200회) 경과, 상조 서비스 미사용 후 해약 요청을 모두 채워야 적용됩니다. 싱글은 상조 납입금 100%(400만원)와 만기축하금(180만원).</li><li><b>중도 해약</b> — 납입 회차에 따른 해약환급금이 적용되고, 가전 잔여 할부금을 일시 또는 분할로 냅니다.</li><li><b>서비스 이용</b> — 가입 기간 중 이용하면 잔여 납입금 완납 후 이용하며, 만기 환급 대상에서 빠집니다.</li><li><b>양도</b> — 양도·양수하면 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</li><li>상품 이미지는 이해를 돕기 위한 것이며 별도 고지 없이 바뀔 수 있습니다. 세부 조건은 상담과 상품설명서·계약서로 확인하세요.</li></ul>
+      <ul><li><b>선불식 할부거래 결합상품입니다.</b> 예·적금이나 금융투자 상품이 아니며, 원금 보장이나 이자 수익을 제공하지 않습니다.</li><li><b>계약은 두 건</b> — 상조 서비스 계약과 가전 렌탈 계약이 별도로 체결됩니다.</li><li><b>만기 환급</b> — 상조·가전 금액 완납, 만기(200회) 경과, 상조 서비스 미사용 후 해약 요청을 모두 채워야 적용됩니다. 가입금액 전액(싱글 580만원 · 더블 1,160만원 · 트리플 1,740만원)을 만기 1개월 뒤 지급.</li><li><b>중도 해약</b> — 납입 회차에 따른 해약환급금이 적용되고, 의무 사용 기간(60회) 안에 해약하면 남은 가전 렌탈료를 냅니다.</li><li><b>서비스 이용</b> — 가입 기간 중 이용하면 잔여 납입금 완납 후 이용하며, 만기 환급 대상에서 빠집니다.</li><li><b>양도</b> — 양도·양수하면 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</li><li><b>신용 심사</b> — 신용도에 따라 청약이 거절될 수 있고, 녹음되는 확인 통화를 거쳐야 계약이 끝납니다.</li><li>상품 이미지는 이해를 돕기 위한 것이며 별도 고지 없이 바뀔 수 있습니다. 세부 조건은 상담과 상품설명서·계약서로 확인하세요.</li></ul>
     </div>
   </div>
 </section>
@@ -683,7 +701,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
       <div class="fb-line">보람상조피플(주)는 「할부거래에 관한 법률」 제18조에 따라 선불식 할부거래업을 등록한 사업자이며, 한국상조공제조합과의 공제계약(2026-07-01 ~ 2027-07-01)을 통해 선수금의 50%를 보전합니다.</div>
       <div class="fb-line">본 사이트는 보람상조피플(주)와 위촉(모집) 계약을 맺은 김다혜 팀장이 운영하는 상담 안내 사이트입니다. 상조·결합상품 계약의 당사자는 보람상조피플(주)이며, 사이트는 상담 신청을 접수해 담당자에게 전달할 뿐 계약 체결이나 대금 결제가 이루어지지 않습니다.</div>
     </div>
-    <div class="disc">본 페이지는 보람상조피플(주) 피플S580 가전결합(선불식 할부거래 결합상품) 안내용입니다. 선수금은 한국상조공제조합을 통해 50% 범위에서 보전되며, 예금자보호 대상 금융상품이 아닙니다. 상조 서비스 계약과 가전 할부 계약이 별도로 체결되고, 만기 환급은 상조·가전 완납 · 만기(200회) 경과 · 상조 서비스 미사용 후 해약 요청을 모두 충족할 때 적용됩니다. 실제 계약 조건은 계약서를 기준으로 합니다.</div>
+    <div class="disc">본 페이지는 보람상조피플(주) 피플S580 가전결합(선불식 할부거래 결합상품) 안내용입니다. 선수금은 한국상조공제조합을 통해 50% 범위에서 보전되며, 예금자보호 대상 금융상품이 아닙니다. 상조 서비스 계약과 가전 렌탈 계약이 별도로 체결되고, 만기 환급은 상조·가전 완납 · 만기(200회) 경과 · 상조 서비스 미사용 후 해약 요청을 모두 충족할 때 적용됩니다. 실제 계약 조건은 계약서를 기준으로 합니다.</div>
   </div>
 </footer>
 
