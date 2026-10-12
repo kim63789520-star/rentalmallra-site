@@ -82,7 +82,7 @@ details.pv ul{padding-left:16px;line-height:1.6;margin-top:6px}
 .me .nm span{display:block;font-size:14px;opacity:.9;margin-top:6px;line-height:1.5}
 .me blockquote{margin:16px 20px 0;padding:16px 18px 16px 20px;border-left:4px solid #ffe08a;background:rgba(255,255,255,.08);border-radius:0 14px 14px 0;font-size:15.5px;line-height:1.65}
 .me blockquote b{color:#ffe08a}
-.me .ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 20px 0}
+.me .ct{display:grid;grid-template-columns:1fr;gap:8px;margin:18px 20px 0}
 .me .ct a{height:52px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:16px;text-decoration:none}
 .me .ct .c1{background:#fff;color:var(--main2)}
 .me .ct .c2{background:#fee500;color:#191919}
@@ -166,7 +166,7 @@ footer a{color:#cfcfcf}
 </head>
 <body><div class="wrap">
 
-<div class="top"><span>웅진프리드라이프 가입 상담</span><span><a href="tel:010-2165-7015">📞 010-2165-7015</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">카톡</a></span></div>
+<div class="top"><span>웅진프리드라이프 가입 상담</span><span><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">카톡</a></span></div>
 <div class="notice">이 페이지는 웅진프리드라이프 공식 홈페이지가 아닌 <b>가입 상담 페이지</b>입니다.</div>
 
 <header class="hero">
@@ -213,7 +213,7 @@ footer a{color:#cfcfcf}
     <div class="nm"><small>프리드라이프 가입 상담</small><b>김다혜</b><span>담당자가 직접 전화드립니다.</span></div>
   </div>
   <blockquote>상조는 한 번 들면 10년 넘게 내는 상품이라, <b>상품 차이와 환급 조건</b>을 알고 고르셔야 합니다. 부모님 연세와 예산만 말씀해 주시면 맞는 상품과 납입 기간을 같이 정해 드릴게요. 가입은 설명 다 들으신 뒤에 결정하시면 됩니다.</blockquote>
-  <div class="ct"><a class="c1" href="tel:010-2165-7015">📞 전화 상담</a><a class="c2" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 문의</a></div>
+  <div class="ct"><a class="c2" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 문의</a></div>
 </section>
 
 <section class="prods" id="prods">
@@ -311,7 +311,7 @@ footer a{color:#cfcfcf}
     <li>카드 결제·할부가 됩니다(할부 조건은 통화로 안내).</li>
   </ol>
   <p class="cond">이미 가입하셨는데 납입이 남아 있으면 발인 전까지 남은 납입금을 한 번에 냅니다.</p>
-  <a href="tel:010-2165-7015">📞 지금 전화하기</a>
+  <a href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 바로 문의</a>
 </section>
 
 <section class="must">
@@ -349,7 +349,7 @@ footer a{color:#cfcfcf}
 </footer>
 
 </div>
-<div class="bar"><div><a class="call" href="tel:010-2165-7015">📞 전화</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡</a><a class="go go-form" href="#quick">상담 신청</a></div></div>
+<div class="bar"><div><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡</a><a class="go go-form" href="#quick">상담 신청</a></div></div>
 
 <script src="../config.js"></script>
 <script>
@@ -394,7 +394,7 @@ footer a{color:#cfcfcf}
     var b=f.querySelector(".submit"); b.disabled=true; msg.textContent="";
     fetch(cfg.relay,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({type:"lead",text:text})})
     .then(function(r){return r.json();}).then(function(d){
-      if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>상담 신청이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 전화드리겠습니다.<br>궁금한 건 카톡으로 먼저 물어보셔도 돼요.</p>'+
+      if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>상담 신청이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 카톡·문자로 먼저 안내드리겠습니다.<br>궁금한 건 카톡으로 먼저 물어보셔도 돼요.</p>'+
         '<a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 바로 상담하기</a><small>상담받으신다고 꼭 가입하셔야 하는 건 아니에요.</small></div>';if(window.fbq)fbq("track","Lead");}
       else{say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");b.disabled=false;}
     }).catch(function(){say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");b.disabled=false;});

@@ -354,7 +354,7 @@ details.pv ul{padding-left:16px;line-height:1.6;margin-top:6px}
       fetch(cfg.relay,{method:"POST",headers:{"Content-Type":"text/plain"},
         body:JSON.stringify({type:"lead",text:text})})
       .then(function(r){return r.json();}).then(function(d){
-        if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>상담 신청이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 전화드리겠습니다.</p></div>';
+        if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>상담 신청이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 카톡·문자로 먼저 안내드리겠습니다.</p></div>';
           if(window.fbq)fbq("track","Lead");}
         else{say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");b.disabled=false;}
       }).catch(function(){say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");b.disabled=false;});

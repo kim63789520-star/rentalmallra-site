@@ -102,7 +102,7 @@ details.pv ul{padding-left:16px;line-height:1.6;margin-top:6px}
 .me ul{list-style:none;margin:18px 20px 0;display:grid;gap:8px;font-size:14px}
 .me li{padding-left:24px;position:relative;line-height:1.5}
 .me li:before{content:"✓";position:absolute;left:0;color:var(--yel);font-weight:900}
-.me .ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 20px 0}
+.me .ct{display:grid;grid-template-columns:1fr;gap:8px;margin:20px 20px 0}
 .me .ct a{height:52px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:16px;text-decoration:none}
 .me .ct .c1{background:#fff;color:var(--navy)}
 .me .ct .c2{background:#fee500;color:#191919}
@@ -174,7 +174,7 @@ footer a{color:#cfcfcf}
 </head>
 <body><div class="wrap">
 
-<div class="top"><span>렌탈사 비교 최저가 견적</span><span><a href="tel:010-8175-7015">📞 010-8175-7015</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">카톡</a></span></div>
+<div class="top"><span>렌탈사 비교 최저가 견적</span><span><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">카톡</a></span></div>
 
 <section class="me">
   <div class="pic">
@@ -182,7 +182,7 @@ footer a{color:#cfcfcf}
     <div class="nm"><small>렌탈 상담 담당자</small><b>김다혜</b><span>담당자가 직접 상담해 드립니다.</span></div>
   </div>
   <blockquote>같은 정수기도 렌탈사에 따라 월 요금이 <b>만 원 넘게</b> 차이 납니다. 광고에 나온 한 곳만 보지 마시고, 저한테 품목만 알려 주세요. <b>가장 싼 조건</b>을 찾아서 알려 드리고, 가입은 그다음에 결정하시면 됩니다.</blockquote>
-  <div class="ct"><a class="c1" href="tel:010-8175-7015">📞 010-8175-7015</a><a class="c2" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 문의</a></div>
+  <div class="ct"><a class="c2" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 문의</a></div>
 </section>
 
 
@@ -302,7 +302,7 @@ footer a{color:#cfcfcf}
 </footer>
 
 </div>
-<div class="bar"><div><a class="call" href="tel:010-8175-7015">📞 전화</a><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡</a><a class="go go-form" href="#quick">최저 견적</a></div></div>
+<div class="bar"><div><a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡</a><a class="go go-form" href="#quick">최저 견적</a></div></div>
 
 <script src="../config.js"></script>
 <script>
@@ -361,7 +361,7 @@ footer a{color:#cfcfcf}
       var b=f.querySelector(".submit"); b.disabled=true; msg.textContent="";
       fetch(cfg.relay,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({type:"lead",text:text})})
       .then(function(r){return r.json();}).then(function(d){
-        if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>견적 상담이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 전화드리겠습니다.<br>궁금한 건 카톡으로 먼저 물어보셔도 돼요.</p>'+
+        if(d&&d.ok){f.innerHTML='<div class="done"><div class="ck">✓</div><b>견적 상담이 접수되었습니다</b><p>확인 후 남겨 주신 번호로 카톡·문자로 먼저 안내드리겠습니다.<br>궁금한 건 카톡으로 먼저 물어보셔도 돼요.</p>'+
           '<a class="kk" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener">💬 카톡으로 바로 상담하기</a><small>상담받으신다고 꼭 가입하셔야 하는 건 아니에요.</small></div>';if(window.fbq)fbq("track","Lead");}
         else{say("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.");b.disabled=false;}
       }).catch(function(){say("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.");b.disabled=false;});
