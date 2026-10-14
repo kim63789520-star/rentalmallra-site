@@ -246,41 +246,190 @@ mark.todo{background:#fff3b0;color:#1a2332;padding:0 4px;border-radius:3px}
   border-color: #0f2342;
   box-shadow: 0 0 0 3px rgba(15, 35, 66, 0.12);
 }
+/* 관심 분야 선택 고강도 눈에 띄는 스타일 */
+.chip-group-wrap {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 16px 14px 14px;
+  margin: 18px 0;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+}
+.chip-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip-group-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0f2342;
+}
+.chip-badge-step {
+  background: #0f2342;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: -0.2px;
+}
+.chip-tip {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
 .chip-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
-.chip-item input[type="radio"] { display: none; }
+.chip-item {
+  position: relative;
+}
+.chip-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
 .chip-label {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 8px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: var(--radius-sm);
-  font-size: 13px;
-  font-weight: 700;
-  color: #475569;
-  background: #f8fafc;
+  padding: 16px 6px 13px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
-  line-height: 1.35;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  user-select: none;
 }
-.chip-label small { font-size: 11px; color: #94a3b8; font-weight: 500; margin-top: 2px; }
-.chip-item input[type="radio"]:checked + .chip-label {
+.chip-label:hover {
   border-color: #0f2342;
-  background: #0f2342;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 35, 66, 0.1);
+}
+.chip-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  width: 100%;
+}
+.chip-icon {
+  font-size: 15px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.chip-sub {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 5px;
+  line-height: 1.25;
+}
+.chip-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: transparent;
+  font-size: 9px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.chip-item input[type="radio"]:checked + .chip-label {
+  background: linear-gradient(135deg, #0f2342 0%, #17335c 100%);
+  border-color: #0f2342;
+  box-shadow: 0 6px 18px rgba(15, 35, 66, 0.3);
+  transform: translateY(-2px);
+}
+.chip-item input[type="radio"]:checked + .chip-label .chip-title {
   color: #ffffff;
 }
-.chip-item input[type="radio"]:checked + .chip-label small { color: var(--gold-light); }
-.chip-highlight {
-  border-color: rgba(229, 185, 90, 0.6) !important;
-  background: #fffbeb !important;
+.chip-item input[type="radio"]:checked + .chip-label .chip-sub {
+  color: var(--gold-light, #f7d688);
+  font-weight: 700;
 }
-.chip-item input[type="radio"]:checked + .chip-highlight { background: #0f2342 !important; }
+.chip-item input[type="radio"]:checked + .chip-label .chip-check {
+  background: var(--gold-primary, #e5b95a);
+  border-color: var(--gold-primary, #e5b95a);
+  color: #070e19;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+/* 비공개 특판 단독 강조 (HOT) */
+.chip-highlight {
+  border: 2px solid #e5b95a !important;
+  background: linear-gradient(180deg, #fffdf2 0%, #fff9e6 100%) !important;
+  box-shadow: 0 3px 10px rgba(229, 185, 90, 0.25) !important;
+}
+.chip-highlight .chip-title {
+  color: #854d0e;
+}
+.chip-highlight .chip-sub {
+  color: #b45309;
+}
+.chip-highlight .chip-check {
+  border-color: #e5b95a;
+  background: #fffdf2;
+}
+.chip-hot-tag {
+  position: absolute;
+  top: -9px;
+  left: 8px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 1px 7px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+}
+.chip-item input[type="radio"]:checked + .chip-highlight {
+  background: linear-gradient(135deg, #0f2342 0%, #17335c 100%) !important;
+  border-color: #e5b95a !important;
+}
+.chip-item input[type="radio"]:checked + .chip-highlight .chip-title {
+  color: #ffffff !important;
+}
+.chip-item input[type="radio"]:checked + .chip-highlight .chip-sub {
+  color: #fde047 !important;
+}
+.chip-item input[type="radio"]:checked + .chip-highlight .chip-check {
+  background: #fde047;
+  border-color: #fde047;
+  color: #070e19;
+}
+@media (max-width: 480px) {
+  .chip-group-wrap { padding: 14px 8px 12px; }
+  .chip-grid { gap: 8px; }
+  .chip-label { padding: 15px 4px 11px; }
+  .chip-title { font-size: 13px; }
+  .chip-sub { font-size: 10.5px; }
+}
 .agree-box {
   margin: 14px 0 16px;
   display: flex;
@@ -868,35 +1017,46 @@ header{background:#fff;border-bottom:1px solid var(--line)}
             <label for="phoneTop">연락처</label>
             <input class="form-input" type="tel" id="phoneTop" name="phone" placeholder="010-1234-5678" maxlength="13" inputmode="numeric" required>
           </div>
-          <div class="form-group">
-            <label>관심 분야 선택</label>
+          <div class="chip-group-wrap">
+            <div class="chip-group-header">
+              <div class="chip-group-title">
+                <span class="chip-badge-step">상담 선택</span>
+                <span>관심 분야 선택</span>
+              </div>
+              <span class="chip-tip">※ 원하시는 혜택을 터치하세요</span>
+            </div>
             <div class="chip-grid">
               <div class="chip-item">
                 <input type="radio" name="product" id="prod1" value="피플S580(가전결합+100%환급)" checked>
                 <label class="chip-label" for="prod1">
-                  최신 가전결합
-                  <small>S580 100% 환급</small>
+                  <span class="chip-check">✓</span>
+                  <span class="chip-title"><span class="chip-icon">🎁</span> 최신 가전결합</span>
+                  <small class="chip-sub">피플S580 100% 환급</small>
                 </label>
               </div>
               <div class="chip-item">
                 <input type="radio" name="product" id="prod2" value="[추천]온라인미공개특판/비교추천">
                 <label class="chip-label chip-highlight" for="prod2">
-                  ★비공개 특판 비교
-                  <small>온라인 광고불가 특판</small>
+                  <span class="chip-hot-tag">★추천</span>
+                  <span class="chip-check">✓</span>
+                  <span class="chip-title"><span class="chip-icon">🔒</span> 비공개 특판 비교</span>
+                  <small class="chip-sub">온라인 광고불가 특판</small>
                 </label>
               </div>
               <div class="chip-item">
                 <input type="radio" name="product" id="prod3" value="마이스터(499·599·699장례전용)">
                 <label class="chip-label" for="prod3">
-                  장례 전용 상품
-                  <small>마이스터 499·599·699</small>
+                  <span class="chip-check">✓</span>
+                  <span class="chip-title"><span class="chip-icon">💐</span> 장례 전용 상품</span>
+                  <small class="chip-sub">마이스터 499·599·699</small>
                 </label>
               </div>
               <div class="chip-item">
                 <input type="radio" name="product" id="prod4" value="웨딩·크루즈전환/부모님상조">
                 <label class="chip-label" for="prod4">
-                  웨딩·크루즈 전환
-                  <small>라이프케어 멤버십</small>
+                  <span class="chip-check">✓</span>
+                  <span class="chip-title"><span class="chip-icon">✈️</span> 웨딩·크루즈 전환</span>
+                  <small class="chip-sub">라이프케어 멤버십</small>
                 </label>
               </div>
             </div>
