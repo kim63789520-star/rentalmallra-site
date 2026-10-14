@@ -813,6 +813,12 @@ header{background:#fff;border-bottom:1px solid var(--line)}
 .gcount{color:var(--muted);font-size:14px;margin:14px 0 18px}
 .gcount b{color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px 20px}
+.pcard-wrap{display:flex;flex-direction:column;gap:8px}
+.pcard-wrap .pcard{flex:1}
+.pc-kakao{display:block;text-align:center;background:#FEE500;color:#191919;font-weight:800;font-size:13px;padding:10px 6px;border-radius:8px;text-decoration:none;line-height:1.3}
+.kakao-ask{display:flex;flex-direction:column;align-items:center;gap:4px;margin:0 0 28px;padding:16px 14px;background:#FEE500;color:#191919;border-radius:14px;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.kakao-ask .ka-main{font-size:17px;font-weight:800;line-height:1.35}
+.kakao-ask .ka-sub{font-size:14.5px;font-weight:600}
 @media(max-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){
   .grid{grid-template-columns:repeat(2,1fr);gap:24px 12px}
@@ -1026,6 +1032,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
       <p class="mg-note">상담 신청은 24시간 접수되어 김다혜 매니저에게 바로 전달됩니다. 연락을 원하지 않으시면 언제든 알려 주세요.</p>
     </div>
   </div>
+  <div class="wrap"><a class="kakao-ask" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener"><span class="ka-main">💬 갖고 싶은 가전 이름만 카톡으로 보내 주세요</span><span class="ka-sub">→ 월 얼마인지 바로 알려드려요</span></a></div>
 </section>
 
 
@@ -1154,7 +1161,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}
   </div>
 </section>
 
-<section class="eapply" id="eapply"><div class="wrap"><div class="ea-panel"><div class="ea-head"><h2>상담 없이 바로 가입하시려면</h2><p>보람상조피플(주) 공식 사이트의 전자청약으로 이어집니다. 담당자 김다혜의 정보가 자동으로 들어가 있어, 가입 뒤 안내도 같은 담당자가 맡습니다.</p></div><div class="ea-list"><a class="ea-item" href="https://www.borampeople.co.kr/Landing/Brochure/index/10?xps=1752600479" target="_blank" rel="noopener"><span class="ea-name">피플S580 가전결합</span><span class="ea-desc">가전 종류를 보고 바로 청약</span><span class="ea-go">전자청약 바로가기</span></a><a class="ea-item" href="https://www.borampeople.co.kr/Funeral/Apply/DirStep/2?prdno=M499&sabun=1752600479" target="_blank" rel="noopener"><span class="ea-name">마이스터 499</span><span class="ea-desc">장례 행사 전용 상품 청약</span><span class="ea-go">전자청약 바로가기</span></a></div><p class="ea-note">전자청약은 보람상조피플(주) 사이트(borampeople.co.kr)에서 진행되며, 계약 조건은 그곳의 약관·상품설명서가 기준입니다. 결제 전에 상품 내용과 환급 조건을 꼭 확인하세요.</p></div></div></section>
+
 <div class="hero" id="top">
   <div class="wrap">
   <div class="hero-grid">
@@ -1276,6 +1283,8 @@ header{background:#fff;border-bottom:1px solid var(--line)}
 <section class="faq" id="faq"><div class="wrap"><div class="sec-head"><h2>자주 묻는 질문</h2><p>가입 전에 자주 물어보시는 내용을 정리했습니다.</p></div><div class="faq-list"><details class="faq-item"><summary>만기에 정말 돌려받나요?</summary><div class="faq-a">상조·가전 금액을 모두 완납하고 만기(200회)가 지난 뒤 상조 서비스를 쓰지 않고 해약을 요청하면, 만기 1개월 뒤 가입금액 전액(싱글 580만원 · 더블 1,160만원 · 트리플 1,740만원)을 받습니다. 조건을 하나라도 못 채우면 회사의 해약환급금 기준이 적용됩니다. 예금·투자 상품이 아니며 원금 보장이나 이자 수익을 제공하지 않습니다.</div></details><details class="faq-item"><summary>가전 값은 따로 내나요?</summary><div class="faq-a">상조 서비스 계약과 가전 렌탈 계약이 따로 체결되고, 처음 60회는 월 납입금이 상조 납입금과 가전 렌탈료로 나뉘어 나갑니다(싱글 4,500원 + 30,000원 = 34,500원). 61~160회는 상조 34,500원, 161~200회는 7,000원입니다. 이 밖에 따로 내는 가전 값은 없습니다.</div></details><details class="faq-item"><summary>가전은 언제, 어떻게 설치되나요?</summary><div class="faq-a">계약이 끝나면 배송·설치가 진행됩니다. 제품마다 일정이 달라 정확한 시점은 상담 때 안내해 드립니다.</div></details><details class="faq-item"><summary>중간에 해지하면 어떻게 되나요?</summary><div class="faq-a">만기 전에 해약하면 납입 회차에 따른 해약환급금이 적용되고, 의무 사용 기간(60회) 안에 해약하면 남은 가전 렌탈료(잔여 할부대금)를 내야 합니다. 만기 환급 대상이 아닙니다.</div></details><details class="faq-item"><summary>상조 서비스도 쓸 수 있나요?</summary><div class="faq-a">네. 장례·웨딩·여행 등 라이프 서비스로 쓸 수 있습니다. 가입 기간 중 이용하면 잔여 납입금을 완납한 뒤 이용하며, 서비스를 쓴 계약은 만기 환급 대상에서 빠집니다.</div></details><details class="faq-item"><summary>가족에게 넘길 수 있나요?</summary><div class="faq-a">양도·양수할 수 있지만, 양도하면 만기에 상조 납입금만 지급되고 만기축하금은 지급되지 않습니다.</div></details><details class="faq-item"><summary>보람상조가 문을 닫으면 어떻게 되나요?</summary><div class="faq-a">‘내상조 그대로’ 제도가 있습니다. 상조회사가 폐업하거나 등록이 취소되면 한국상조공제조합을 통해 그동안 낸 상조 납입금을 100% 인정받고, 참여하는 다른 상조회사에서 상조 서비스를 이어서 받을 수 있습니다. 2024년 12월 31일 기준 보람상조피플(주)의 총 선수금은 약 2,028억원, 고객 환급 의무액 약 1,464억원, 상조 관련 자산 약 1,692억원이며 공인회계사 회계감사를 받았습니다.</div></details><details class="faq-item"><summary>가입한 지 오래되면 상조 서비스를 못 쓰나요?</summary><div class="faq-a">아닙니다. 계약한 서비스는 기간과 관계없이 이용할 수 있습니다.</div></details><details class="faq-item"><summary>안전한가요?</summary><div class="faq-a">보람상조피플(주)는 할부거래법에 따라 선불식 할부거래업을 등록했고, 한국상조공제조합과의 공제계약으로 선수금의 50%를 보전합니다. 예금자보호 대상 금융상품은 아니며 실제 조건은 계약서를 기준으로 합니다.</div></details></div></div></section>
 
 
+<section class="eapply" id="eapply"><div class="wrap"><div class="ea-panel"><div class="ea-head"><h2>상담 없이 바로 가입하시려면</h2><p>보람상조피플(주) 공식 사이트의 전자청약으로 이어집니다. 담당자 김다혜의 정보가 자동으로 들어가 있어, 가입 뒤 안내도 같은 담당자가 맡습니다.</p></div><div class="ea-list"><a class="ea-item" href="https://www.borampeople.co.kr/Landing/Brochure/index/10?xps=1752600479" target="_blank" rel="noopener"><span class="ea-name">피플S580 가전결합</span><span class="ea-desc">가전 종류를 보고 바로 청약</span><span class="ea-go">전자청약 바로가기</span></a><a class="ea-item" href="https://www.borampeople.co.kr/Funeral/Apply/DirStep/2?prdno=M499&sabun=1752600479" target="_blank" rel="noopener"><span class="ea-name">마이스터 499</span><span class="ea-desc">장례 행사 전용 상품 청약</span><span class="ea-go">전자청약 바로가기</span></a></div><p class="ea-note">전자청약은 보람상조피플(주) 사이트(borampeople.co.kr)에서 진행되며, 계약 조건은 그곳의 약관·상품설명서가 기준입니다. 결제 전에 상품 내용과 환급 조건을 꼭 확인하세요.</p></div></div></section>
+
 <section class="notice">
   <div class="wrap">
     <div class="notice-inner">
@@ -1379,15 +1388,17 @@ function filtered(){
   if(state.sort==="high") r=r.slice().sort(function(a,b){return b.monthly-a.monthly;});
   return r;
 }
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".pc-kakao");if(!a)return;var m=a.getAttribute("data-model");try{navigator.clipboard&&navigator.clipboard.writeText(m+" 월 얼마예요?")}catch(_){}});
 function card(p){
   var img=p.thumb?'<img loading="lazy" src="'+p.thumb+'" alt="'+p.full+'">':'<div class="noimg">이미지 준비중</div>';
-  return '<a class="pcard" href="'+p.url+'" target="_blank" rel="noopener">'
+  return '<div class="pcard-wrap"><a class="pcard" href="'+p.url+'" target="_blank" rel="noopener">'
     +'<div class="imgbox">'+img+(p.best?'<span class="best-badge">추천</span>':'')+'</div><div class="body">'
     +'<span class="gj">'+p.tier+' · '+p.gooja+'</span>'
     +'<div class="brand">'+(p.brand||"&nbsp;")+'</div>'
     +'<div class="name">'+p.title+'</div>'
     +'<div class="model">'+p.model+'</div>'
-    +'<div class="foot">월 납입금<b>'+p.monthly.toLocaleString()+'원</b></div><div class="ea-mini">이 가전으로 전자청약</div></div></a>';
+    +'<div class="foot">월 납입금<b>'+p.monthly.toLocaleString()+'원</b></div><div class="ea-mini">이 가전으로 전자청약</div></div></a>'
+    +'<a class="pc-kakao" href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener" data-model="'+String(p.title).replace(/"/g,"&quot;")+'">💬 이 가전 월 얼마? 카톡으로 묻기</a></div>';
 }
 var cur=[];
 function render(reset){ cur=filtered(); if(reset) state.shown=PER; paint(); }
