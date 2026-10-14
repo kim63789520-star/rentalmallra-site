@@ -106,7 +106,7 @@ mark.todo{background:#fff3b0;color:#1a2332;padding:0 4px;border-radius:3px}
 .sec-custom-quote {
   background: radial-gradient(circle at 50% 20%, #172d4d 0%, #0a1424 80%);
   color: #fff;
-  padding: 56px 0 64px;
+  padding: 64px 0 68px;
   position: relative;
   overflow: hidden;
 }
@@ -182,6 +182,65 @@ mark.todo{background:#fff3b0;color:#1a2332;padding:0 4px;border-radius:3px}
   font-style: normal;
   font-weight: 800;
 }
+
+/* 지원 가전 모음 쇼케이스 */
+.quote-appliances-box {
+  margin: 18px 0 0;
+  width: 100%;
+}
+.quote-appliances-img-wrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(229, 185, 90, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 20px rgba(229, 185, 90, 0.12);
+  background: #0d1b2e;
+}
+.quote-appliances-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.quote-appliances-img-wrap:hover .quote-appliances-img {
+  transform: scale(1.02);
+}
+.quote-appliances-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, rgba(7,14,25,0) 0%, rgba(7,14,25,0.78) 45%, rgba(7,14,25,0.94) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.quote-appliances-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1.35;
+}
+.quote-appliances-pill .pill-star {
+  color: var(--gold-primary);
+  font-size: 13px;
+}
+.quote-appliances-pill .pill-sub {
+  color: var(--gold-light);
+  font-weight: 500;
+  font-size: 11.5px;
+}
+@media (max-width: 640px) {
+  .quote-appliances-box { margin: 14px 0 18px; }
+  .quote-appliances-pill { font-size: 11px; flex-wrap: wrap; }
+  .quote-appliances-pill .pill-sub { font-size: 10px; }
+}
+
 .quote-planner-badge {
   display: inline-flex;
   align-items: center;
@@ -998,6 +1057,21 @@ header{background:#fff;border-bottom:1px solid var(--line)}
             <div class="quote-planner-name">김다혜 매니저 1:1 직통 케어</div>
             <div class="quote-planner-sub">보람상조피플(주) 공식위촉 · 010-2165-7015</div>
           </div>
+        </div>
+        <!-- 인기 지원 가전 쇼케이스 (TV, 냉장고, 세탁건조기, 노트북, 로봇청소기 등) -->
+        <div class="quote-appliances-box">
+          <div class="quote-appliances-img-wrap">
+            <picture>
+              <source srcset="img/appliances_bundle.webp" type="image/webp">
+              <img class="quote-appliances-img" src="img/appliances_bundle.jpg" alt="인기 지원 가전 라인업 (TV · 냉장고 · 세탁기 건조기 · 노트북 · 로봇청소기 등)" width="1376" height="768" loading="eager">
+            </picture>
+            <div class="quote-appliances-overlay">
+              <div class="quote-appliances-pill">
+                <span class="pill-star">★</span> 인기 가전 60여 종 지원 라인업 <span class="pill-sub">(TV · 노트북 · 냉장고 · 세탁건조기 · 로봇청소기 등)</span>
+              </div>
+            </div>
+          </div>
+          <p style="margin:6px 0 0;font-size:12px;color:rgba(255,255,255,.72)">※ 이미지는 연출용이며 실제 제공 모델은 상담 시 안내</p>
         </div>
       </div>
 
