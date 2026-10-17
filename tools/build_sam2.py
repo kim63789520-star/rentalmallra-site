@@ -181,6 +181,11 @@ assert n1 == 1 and n2 == 1, (n1, n2)
 # 대표님만 보는 곳이라 왼쪽 떠 있는 카카오톡 상담 버튼도 뺌 (10-17 대표님)
 s, n3 = re.subn(r'<div class="floatbtns">.*?</div>\n', '', s, flags=re.S)
 assert n3 == 1, n3
+# 상담 문구 전부 뺌 — 상단 카톡 상담 버튼 · 하단 CS(상담 신청 24시간) (10-17 대표님 "상담 문구 다 없애")
+s, n4 = re.subn(r'\s*<div class="nav-cta">.*?</div>', '', s, count=1, flags=re.S)
+s, n5 = re.subn(r'\s*<div class="foot-cs">.*?</div>\s*</div>', '', s, count=1, flags=re.S)
+assert n4 == 1 and n5 == 1, (n4, n5)
+s = rep(s, '<div class="ph-k">상담사가 골라드린 상품</div>', '<div class="ph-k">골라드린 상품</div>')
 s = s.replace('href="#consult"', 'href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener"').replace('>상담 신청</a></div>', '>카톡 상담</a></div>')
 s = rep(s, 'body{margin:0;', 'body.custom,body:not(.picking){padding-bottom:20px!important}\nbody{margin:0;')
 
