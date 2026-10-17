@@ -131,6 +131,7 @@ JS = r"""
     $("pickGuide").hidden=!on; $("pickbar").hidden=!on; bar();
   }
   $("pickToggle").addEventListener("click",function(){ setPicking(!picking); if(picking) $("catalog").scrollIntoView({behavior:"smooth"}); });
+  setPicking(true);  // 대표님이 고객에게 보내려고 쓰는 곳 — 처음부터 골라서 공유 (10-17 대표님)
   grid.addEventListener("click",function(e){
     if(!picking) return;
     var a=e.target.closest(".pcard"); if(!a) return;
