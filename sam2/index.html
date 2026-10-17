@@ -576,7 +576,9 @@ section.catalog{background:var(--nv)}
 .pick-toggle.on{background:#fff;color:var(--nv)}
 .pick-guide{background:var(--nv2);color:#fff;border-radius:12px;padding:12px 14px;margin:0 0 14px;font-size:14px;line-height:1.55}
 .pick-guide b{color:var(--tap)}
-.pick-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pick-fields{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.pick-preview{margin-top:8px;font-size:13px;color:#c3cde0;line-height:1.5}
+.pick-preview b{color:#fff}
 .pick-fields input{width:100%;border:0;border-radius:8px;padding:10px 12px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
 @media(max-width:720px){.pick-fields{grid-template-columns:1fr}}
 .pcard{position:relative}
@@ -650,9 +652,9 @@ body.custom .sf,body.custom .sf-tags,body.custom .sf-bar .right,body.custom .sam
     <div class="pick-guide" id="pickGuide" hidden>
       <b>골라서 공유</b> · 상품을 눌러 체크한 뒤 아래 <b>선택한 것 보내기</b>를 누르면, 고른 상품만 보이는 링크가 만들어져요.
       <div class="pick-fields">
-        <input id="pkTitle" placeholder="제목 (예: 고객님께 추천드리는 냉장고)" aria-label="제목">
-        <input id="pkMemo" placeholder="안내 문구 (예: 담당 김다혜 · 궁금한 점은 카톡 주세요)" aria-label="안내 문구">
+        <input id="pkName" placeholder="고객 이름 (예: 홍길동)" aria-label="고객 이름" autocomplete="off">
       </div>
+      <div class="pick-preview" id="pkPreview"></div>
       <div class="pick-link" id="pickLink" hidden></div>
     </div>
     <div class="sf-bar">
@@ -904,12 +906,13 @@ render();
 
 (function(){
   var $=function(id){return document.getElementById(id);};
+  var MEMO="가전결합 담당 김다혜입니다 😊\n모두 새 제품이고, 상품을 누르면 월 납입금·만기 환급 조건을 자세히 보실 수 있어요.\n마음에 드는 제품을 알려주시면 1:1로 꼼꼼하게 안내해 드릴게요!";
   function toast(t){var e=$("ptoast");e.textContent=t;e.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(function(){e.classList.remove("on");},2200);}
   // 고객이 받은 화면
   if(CUSTOM){
     document.body.classList.add("custom");
     var t=UP.get("t")||(UP.get("q")?"고객님께 추천드리는 "+UP.get("q"):"고객님께 추천드리는 상품");
-    $("phTitle").textContent=t; $("phMemo").textContent=UP.get("memo")||"상품을 누르면 자세한 조건을 볼 수 있어요.";
+    $("phTitle").textContent=t; $("phMemo").textContent=UP.get("memo")||MEMO;
     $("pickHead").hidden=false; document.title=t+" | 상조 가전결합 통합관";
     var names=cur.slice(0,10).map(function(p){return p.full;}).join(", ");
     if(names){ window.__PRODUCT__="[추천목록] "+names; }
@@ -917,6 +920,16 @@ render();
     setTimeout(go,0); window.addEventListener("load",go);
     return;
   }
+  function what(){
+    var v=$("q").value.trim(); if(v) return v;
+    if(sel.cat.length===1) return sel.cat[0];
+    if(sel.brand.length===1) return sel.brand[0]+" 가전";
+    return "가전";
+  }
+  window.title=function(){
+    var n=$("pkName").value.trim().replace(/\s*(고객)?님$/,"");
+    return (n?n+" 고객님":"고객님")+"께 추천드리는 "+what();
+  };
   function bar(){
     $("pkCount").textContent=picked.length; $("pkSend").disabled=!picked.length;
     $("pkClear").style.display=picked.length?"":"none";
@@ -941,13 +954,12 @@ render();
     if(all){ var qq=$("q").value.trim(); if(qq) u.searchParams.set("q",qq); if(sort!=="def") u.searchParams.set("sort",sort);
       if(!qq){ u.searchParams.set("ids",cur.map(function(p){return p.id;}).join(",")); } }
     else u.searchParams.set("ids",picked.join(","));
-    var t=$("pkTitle").value.trim(), m=$("pkMemo").value.trim();
-    if(t) u.searchParams.set("t",t); if(m) u.searchParams.set("memo",m);
+    u.searchParams.set("t",title());
     return u.toString();
   }
   function share(url){
-    var box=$("pickLink"); box.hidden=false; var shown=url; try{ shown=decodeURIComponent(url).replace(/\+/g," "); }catch(e){} box.textContent="보낼 링크: "+shown;
-    var title=$("pkTitle").value.trim()||"고객님께 추천드리는 상품";
+    var box=$("pickLink"); box.hidden=false; box.textContent="✅ 「"+window.title()+"」 링크를 만들었어요. 카톡에 붙여넣어 보내세요!";
+    var title=window.title();
     function copy(){
       var done=function(){toast("링크를 복사했어요. 카톡에 붙여넣어 보내세요");};
       if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(url).then(done,function(){fb();done();}); } else { fb(); done(); }
@@ -961,8 +973,10 @@ render();
     if(!$("q").value.trim() && cur.length===P.length){ toast("검색어나 필터로 상품을 먼저 좁혀 주세요"); return; }
     share(link(true));
   });
-  $("q").addEventListener("input",function(){ if(!$("pkTitle").dataset.t){ var v=$("q").value.trim(); $("pkTitle").value=v?"고객님께 추천드리는 "+v:""; } });
-  $("pkTitle").addEventListener("input",function(){ this.dataset.t="1"; });
+  function preview(){ $("pkPreview").innerHTML="제목: <b>"+esc(title())+"</b><br>안내: "+esc(MEMO.split("\n")[0]); }
+  ["pkName","q"].forEach(function(id){ $(id).addEventListener("input",preview); });
+  document.getElementById("sfRows").addEventListener("click",function(){ setTimeout(preview,0); });
+  preview();
 })();
 </script>
 
