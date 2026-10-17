@@ -1,6 +1,6 @@
 # /sam2/ = /sam/ 복제 + '골라서 공유' 기능 (상품 골라 고객에게 링크로 보내기)
 # 사용: python3 tools/build_sam2.py   (/sam/ 을 고친 뒤 다시 실행하면 /sam2/ 에 반영)
-import os
+import os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 src = open(os.path.join(ROOT, 'sam/index.html'), encoding='utf-8').read()
 
@@ -173,6 +173,13 @@ JS = r"""
 s = rep(s, 'render();\n</script>', 'render();\n' + JS + '</script>')
 s = rep(s, '[통합관 /sam]', '[통합관 /sam2]')
 s = rep(s, "gcount.innerHTML='전체 <b>'+cur.length+'</b>개';", "gcount.innerHTML=(CUSTOM?'추천 상품 ':'전체 ')+'<b>'+cur.length+'</b>개';")
+
+# 상담사 전용 페이지라 상담 접수(폼·하단 바)는 뺌. 문의는 카카오톡으로
+s, n1 = re.subn(r'<section class="consult" id="consult">.*?</section>\n', '', s, flags=re.S)
+s, n2 = re.subn(r'<div class="leadbar">.*?</form>\s*</div>\s*</div>\n', '', s, flags=re.S)
+assert n1 == 1 and n2 == 1, (n1, n2)
+s = s.replace('href="#consult"', 'href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener"').replace('>상담 신청</a></div>', '>카톡 상담</a></div>')
+s = rep(s, 'body{margin:0;', 'body.custom,body:not(.picking){padding-bottom:20px!important}\nbody{margin:0;')
 
 os.makedirs(os.path.join(ROOT, 'sam2'), exist_ok=True)
 open(os.path.join(ROOT, 'sam2/index.html'), 'w', encoding='utf-8').write(s)
