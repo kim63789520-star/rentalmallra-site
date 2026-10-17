@@ -178,6 +178,9 @@ s = rep(s, "gcount.innerHTML='전체 <b>'+cur.length+'</b>개';", "gcount.innerH
 s, n1 = re.subn(r'<section class="consult" id="consult">.*?</section>\n', '', s, flags=re.S)
 s, n2 = re.subn(r'<div class="leadbar">.*?</form>\s*</div>\s*</div>\n', '', s, flags=re.S)
 assert n1 == 1 and n2 == 1, (n1, n2)
+# 대표님만 보는 곳이라 왼쪽 떠 있는 카카오톡 상담 버튼도 뺌 (10-17 대표님)
+s, n3 = re.subn(r'<div class="floatbtns">.*?</div>\n', '', s, flags=re.S)
+assert n3 == 1, n3
 s = s.replace('href="#consult"', 'href="http://pf.kakao.com/_xowzxhX/chat" target="_blank" rel="noopener"').replace('>상담 신청</a></div>', '>카톡 상담</a></div>')
 s = rep(s, 'body{margin:0;', 'body.custom,body:not(.picking){padding-bottom:20px!important}\nbody{margin:0;')
 
