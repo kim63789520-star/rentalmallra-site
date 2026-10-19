@@ -751,11 +751,14 @@ const PER=24;
 const grid=document.getElementById("grid"), gcount=document.getElementById("gcount"), moreBtn=document.getElementById("moreBtn");
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function val(p,k){ if(k==="price"){ for(var i=0;i<BANDS.length;i++){ if(p.m>=BANDS[i][0]&&p.m<=BANDS[i][1]) return F.price[i]; } return ""; } return p[k]; }
+// 폰 검색: "65 인치"·"65형"·"65인치 티비"도 찾게 — 띄어쓰기 무시, 낱말마다 따로 (10-19 대표님)
+function nz(s){ return String(s).toLowerCase().replace(/(\d+)\s*(인치|형|")/g,"$1인치").replace(/티비|테레비/g,"tv"); }
 function optLabel(k,v){ return k==="gj"? v+"구좌" : v; }
 function pass(p,skip){
   for(var k in sel){ if(k===skip||!sel[k].length) continue; if(sel[k].indexOf(val(p,k))<0) return false; }
   if(IDS && IDS.indexOf(p.id)<0) return false;
-  if(q){ var hay=(p.co+" "+p.full+" "+p.model+" "+p.brand+" "+p.cat).toLowerCase(); if(hay.indexOf(q)<0) return false; }
+  if(q){ var hay=nz(p.co+" "+p.full+" "+p.model+" "+p.brand+" "+p.cat).replace(/\s+/g,""), ws=nz(q).split(/\s+/);
+    for(var w=0;w<ws.length;w++){ if(ws[w] && hay.indexOf(ws[w])<0) return false; } }
   return true;
 }
 // 추천순: 상조사를 번갈아(첫 화면에 세 곳이 고루 보이게), 각 상조사 안에서는 추천 먼저
@@ -812,7 +815,7 @@ document.getElementById("samCos").addEventListener("click",function(e){
   document.getElementById("catalog").scrollIntoView({behavior:"smooth"});
 });
 document.getElementById("sfReset").addEventListener("click",function(){ sel={co:[],cat:[],brand:[],gj:[],price:[]}; q=""; document.getElementById("q").value=""; render(); });
-document.getElementById("q").addEventListener("input",function(e){ q=e.target.value.trim().toLowerCase(); render(); });
+["input","compositionend"].forEach(function(ev){ document.getElementById("q").addEventListener(ev,function(e){ q=e.target.value.trim().toLowerCase(); render(); }); });
 document.getElementById("sort").addEventListener("click",function(e){
   var b=e.target.closest("button"); if(!b) return; sort=b.dataset.s;
   this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b);}); render();
