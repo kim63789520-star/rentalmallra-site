@@ -743,7 +743,7 @@ const BANDS = [[0, 39999], [50000, 59999], [60000, 69999], [70000, 89999], [9000
 const LABEL={co:"상조사",cat:"카테고리",brand:"브랜드",gj:"구좌수",price:"월 납입금"};
 const SHOW={brand:20};
 const COLOR={"보람상조피플":"var(--c-boram)","소노아임레디":"var(--c-sono)","더리본상조":"var(--c-the)"};
-const SUB={"보람상조피플":"만기 200회 · 만 25~70세 미만","소노아임레디":"스마트케어 · 만기 200회 · 만 20~74세","더리본상조":"만기 188회 · 만 20~74세"};
+const SUB={"보람상조피플":"만기 200회 · 만 25~70세 미만","소노아임레디":"스마트케어 · 180개월 납입 + 20개월 거치(납입 없음) · 만 20~74세","더리본상조":"만기 188회 · 만 20~74세"};
 let sel={co:[],cat:[],brand:[],gj:[],price:[]}, q="", sort="def", shown=0;
 const PER=24;
 const grid=document.getElementById("grid"), gcount=document.getElementById("gcount"), moreBtn=document.getElementById("moreBtn");
@@ -826,7 +826,7 @@ function card(p){
     +'<div class="name">'+(p.brand?'<span class="br">['+esc(p.brand)+']</span> ':'')+esc(p.title)+'</div>'
     +'<div class="model">'+esc(p.model)+'</div>'
     +'<div class="foot"><div class="m">월<b>'+p.m.toLocaleString()+'<small>원</small></b>'
-    +'<i class="m2">'+(p.same||!p.p1?'':'1-60회 '+p.p1.toLocaleString()+'원 · ')+'만기 '+p.mangi+'회</i></div></div><span class="go">자세히 보기 ›</span></div></a>';
+    +'<i class="m2">'+(p.same||!p.p1?'':'1-60회 '+p.p1.toLocaleString()+'원 · ')+(p.co==="소노아임레디"?'180개월 납입 + 20개월 거치':'만기 '+p.mangi+'회')+'</i></div></div><span class="go">자세히 보기 ›</span></div></a>';
 }
 var cur=[];
 function render(){
