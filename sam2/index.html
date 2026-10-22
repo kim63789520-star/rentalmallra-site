@@ -626,7 +626,7 @@ body.custom .sf,body.custom .sf-tags,body.custom .sf-bar .right,body.custom .sam
   <div class="wrap">
     <div class="kick">상조 3곳 · 선불식 할부거래 결합상품</div>
     <h1>가전결합 574종,<br><em>한 화면에서</em> 비교하세요</h1>
-    <p>월 29,900원부터. 만기·환급 조건은 상조사마다 다르니 상세 페이지에서 꼭 확인하세요.</p>
+    <p>월 29,900원부터. 만기·환급 조건과 가입 가능 나이(만 나이)는 상조사마다 다르니 상세 페이지에서 꼭 확인하세요.</p>
     <div class="sam-cos" id="samCos"></div>
   </div>
 </div>
@@ -739,7 +739,7 @@ const BANDS = [[0, 39999], [50000, 59999], [60000, 69999], [70000, 89999], [9000
 const LABEL={co:"상조사",cat:"카테고리",brand:"브랜드",gj:"구좌수",price:"월 납입금"};
 const SHOW={brand:20};
 const COLOR={"보람상조피플":"var(--c-boram)","소노아임레디":"var(--c-sono)","더리본상조":"var(--c-the)"};
-const SUB={"보람상조피플":"만기 200회","소노아임레디":"스마트케어 · 만기 200회","더리본상조":"만기 188회"};
+const SUB={"보람상조피플":"만기 200회 · 만 25~70세 미만","소노아임레디":"스마트케어 · 만기 200회 · 만 20~74세","더리본상조":"만기 188회 · 만 20~74세"};
 let sel={co:[],cat:[],brand:[],gj:[],price:[]}, q="", sort="def", shown=0;
 var UP=new URLSearchParams(location.search);
 var IDS=UP.get("ids")?UP.get("ids").split(",").filter(Boolean):null;
