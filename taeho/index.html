@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>태호 비서</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1f;--sub:#6b6b70;--line:#e4e2dd;--acc:#e8590c}
+@media (prefers-color-scheme:dark){:root{--bg:#141415;--card:#1f1f21;--ink:#f2f2f2;--sub:#a1a1a6;--line:#2e2e31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+header{padding:28px 16px 8px;max-width:1100px;margin:auto}h1{margin:0;font-size:24px}header p{margin:4px 0 0;color:var(--sub)}
+main{max-width:1100px;margin:auto;padding:16px}
+h2{font-size:17px;margin:24px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+article{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+article img,.noimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--line)}
+.noimg{display:flex;align-items:center;justify-content:center;color:var(--sub)}
+.body{padding:12px 14px 14px}.meta{font-size:13px;color:var(--sub)}
+.s{margin-left:4px;padding:1px 6px;border-radius:6px;background:var(--line);color:var(--ink);font-size:12px}
+.b{padding:1px 6px;border-radius:6px;font-size:12px}.ok{background:#d3f9d8;color:#2b8a3e}.warn{background:#fff3bf;color:#a76a00}.bad{background:#ffe3e3;color:#c92a2a}
+h3{font-size:15px;margin:6px 0 10px;line-height:1.4}
+.links a{display:inline-block;margin:0 6px 6px 0;padding:4px 10px;border:1px solid var(--line);border-radius:8px;color:var(--ink);text-decoration:none;font-size:13px}
+.links a.alt{padding:2px 8px}
+.memo{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+textarea{width:100%;min-height:110px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+button{margin-top:8px;padding:10px 18px;border:0;border-radius:8px;background:var(--acc);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+#ok{margin-left:10px;color:var(--sub)}
+</style></head><body>
+<header><h1>태호 비서</h1><p>경제배달플랫폼 · 화별 현황과 파일 · 콩팀장이 매일 메모를 확인합니다</p></header>
+<main>
+<section class="memo">
+  <h2 style="margin-top:0">📝 콩팀장에게 메모 남기기</h2>
+  <textarea id="m" maxlength="400" placeholder="예) 5화 썸네일 글씨 좀 더 크게 / 다음 주제로 ○○ 어때요"></textarea>
+  <button id="send">남기기</button><span id="ok"></span>
+</section>
+<h2>🟠 경제배달플랫폼</h2>
+<div class="grid">
+<article>
+  <img src="img/01_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>1화</b> · 노키아 <span class="s">업로드 완료</span> <span class="b bad">문장 겹침</span></div>
+    <h3>&#x27;아이폰보다 11년 먼저 만들었다&#x27; 세계 1위 휴대폰 노키아가 6년 만에 몰락한 진짜 이유</h3>
+    <div class="links"><a href="files/1화_노키아_업로드문구.md" download>업로드 문구</a><a href="files/1화_노키아_숏츠_대본.md" download>숏츠 대본</a> 썸네일 <a href="img/01_A.jpg" target="_blank" class="alt">A안</a><a href="img/01_B.jpg" target="_blank" class="alt">B안</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/02_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>2화</b> · 대공황 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;주식 한 주 없던 사람까지 망했다&#x27; 1929 대공황, 은행 앞 줄에서 시작된 진짜 이야기</h3>
+    <div class="links"><a href="files/2화_대공황_업로드문구.md" download>업로드 문구</a><a href="files/2화_대공황_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/03_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>3화</b> · 위워크 <span class="s">업로드 완료</span> <span class="b warn">제목 겹침</span></div>
+    <h3>&#x27;100원 팔면 90원 손해&#x27; 470억 달러 공유오피스 위워크가 파산하기까지</h3>
+    <div class="links"><a href="files/3화_위워크_업로드문구.md" download>업로드 문구</a><a href="files/3화_위워크_숏츠_대본.md" download>숏츠 대본</a> 썸네일 <a href="img/03_A.jpg" target="_blank" class="alt">A안</a><a href="img/03_B.jpg" target="_blank" class="alt">B안</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/04_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>4화</b> · 튤립버블 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;튤립 한 송이에 집 한 채&#x27; 튤립 버블, 우리가 알던 결말은 거짓이었다</h3>
+    <div class="links"><a href="files/4화_튤립버블_업로드문구.md" download>업로드 문구</a><a href="files/4화_튤립버블_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/05_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>5화</b> · 엔비디아 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;30일 뒤면 망한다던 회사&#x27; 게임 그래픽카드 엔비디아가 AI 대장주가 되기까지</h3>
+    <div class="links"><a href="files/5화_엔비디아_업로드문구.md" download>업로드 문구</a><a href="files/5화_엔비디아_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/06_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>6화</b> · 금융위기 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;1달러가 97센트로&#x27; 리먼브러더스 파산, 2008 금융위기가 우리 환율까지 흔든 이유</h3>
+    <div class="links"><a href="files/6화_금융위기_업로드문구.md" download>업로드 문구</a><a href="files/6화_금융위기_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/07_C.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>7화</b> · 엔론 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;벌지도 않은 돈을 장부에 적었다&#x27; 엔론 분식회계, 미국을 속인 혁신기업의 파산</h3>
+    <div class="links"><a href="files/7화_엔론_업로드문구.md" download>업로드 문구</a><a href="files/7화_엔론_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/08_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>8화</b> · 오일쇼크 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;기름값이 몇 달 만에 4배&#x27; 1973 오일쇼크, 일본 휴지 사재기까지 번진 석유파동</h3>
+    <div class="links"><a href="files/8화_오일쇼크_업로드문구.md" download>업로드 문구</a><a href="files/8화_오일쇼크_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/09_C.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>9화</b> · 코닥 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;아무한테도 말하지 마라&#x27; 디지털카메라를 처음 만든 코닥이 망한 진짜 이유</h3>
+    <div class="links"><a href="files/9화_코닥_업로드문구.md" download>업로드 문구</a><a href="files/9화_코닥_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/10_A.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>10화</b> · 일본버블 <span class="s">업로드 완료</span> <span class="b ok">겹침 안전</span></div>
+    <h3>&#x27;땅값은 절대 안 떨어진다&#x27; 일본 버블 붕괴, 잃어버린 30년은 이렇게 시작됐다</h3>
+    <div class="links"><a href="files/10화_일본버블_업로드문구.md" download>업로드 문구</a><a href="files/10화_일본버블_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/11_일.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>11화</b> · 테라노스 <span class="s">업로드 완료</span> </div>
+    <h3>&#x27;피 한 방울로 12조 원&#x27; 거물들까지 믿었던 테라노스가 무너진 진짜 이유</h3>
+    <div class="links"><a href="files/11화_테라노스_업로드문구.md" download>업로드 문구</a><a href="files/11화_테라노스_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+<article>
+  <img src="img/12_일.jpg" alt="" loading="lazy">
+  <div class="body">
+    <div class="meta"><b>12화</b> · IMF외환위기 <span class="s">업로드 완료</span> </div>
+    <h3>&#x27;공장은 있는데 달러가 없었다&#x27; 1997 IMF 외환위기, 한국이 쓰러진 진짜 이유</h3>
+    <div class="links"><a href="files/12화_IMF외환위기_업로드문구.md" download>업로드 문구</a><a href="files/12화_IMF외환위기_숏츠_대본.md" download>숏츠 대본</a></div>
+  </div>
+</article>
+</div>
+</main>
+<script>
+document.getElementById('send').onclick = async () => {
+  const t = document.getElementById('m').value.trim(), ok = document.getElementById('ok');
+  if (!t) return;
+  ok.textContent = '보내는 중…';
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz0nLMMAcb-5_vas_Flbu1kb2SA0FzTjWLPyDO5ytSI-3gan/exec', {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain'},
+      body: JSON.stringify({site: 'taeho', page: 'memo', q: t, ua: navigator.userAgent})});
+    document.getElementById('m').value = '';
+    ok.textContent = '남겼습니다 ✓ 콩팀장이 확인할게요';
+  } catch (e) { ok.textContent = '실패 — 잠시 뒤 다시 눌러 주세요'; }
+};
+</script>
+</body></html>
