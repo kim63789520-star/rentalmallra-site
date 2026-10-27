@@ -424,7 +424,8 @@ if(!p){
     var name=document.getElementById("apName").value.trim(), time=document.getElementById("apTime").value, addr=document.getElementById("apAddr").value.trim();
     var text="\u{1F514} [보람상조피플] 상담 신청\n\n이름: "+(name||"(미입력)")+"\n연락처: "+tel
       +(time?("\n통화 희망: "+time):"")
-      +"\n관심상품: "+p.brand+" "+p.title+" ("+p.model+")"
+      +"\n상품명: ["+p.brand+"] "+p.title
+      +"\n모델명: "+p.model
       +"\n구좌: "+p.gooja+" · 월 "+won(p.monthly)+"원"
       +(addr?("\n주소: "+addr):"")
       +"\n신청 위치: 상품 화면 구좌 확인 → 신청서"
