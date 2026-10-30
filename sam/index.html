@@ -365,6 +365,15 @@ header{background:rgba(255,255,255,.92);backdrop-filter:saturate(1.6) blur(12px)
 .nav-links a:hover{color:var(--ink)}
 .nav-cta .btn{background:var(--ink);color:#fff;border-radius:10px;padding:9px 16px;font-size:15.7px;font-weight:600}
 .nav-cta .btn:hover{background:#000}
+@media(min-width:821px){
+  body{padding-top:92px}
+  header .wrap{max-width:none;padding:0 clamp(24px,2.5vw,48px)}
+  .nav{height:92px;gap:32px}
+  .controls{top:92px}
+  .logo{gap:12px}.logo b{font-size:29.1px}.logo span{font-size:16.8px}
+  .nav-links{gap:38px;font-size:18.5px}
+  .nav-cta .btn{padding:14px 26px;font-size:18.5px;border-radius:12px}
+}
 
 .sam-hero{padding:56px 0 30px;border-bottom:1px solid var(--line)}
 .sam-hero .kick{font-size:14.6px;font-weight:600;color:var(--muted);letter-spacing:.02em}

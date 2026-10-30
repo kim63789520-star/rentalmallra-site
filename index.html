@@ -60,6 +60,14 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,25
 .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .2s}
 @media(hover:hover){.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{transform:scaleX(1)}}
 .nav-cta .btn{height:42px;padding:0 18px;font-size:16.2px}
+@media(min-width:1061px){
+  body{padding-top:92px}
+  header .wrap{max-width:none;padding:0 clamp(24px,2.5vw,48px)}
+  .nav{height:92px;gap:32px}
+  .logo{gap:12px}.logo b{font-size:31.4px}.logo span{font-size:16.8px}
+  .nav-links{gap:38px;font-size:18.5px}
+  .nav-cta .btn{height:52px;padding:0 26px;font-size:18.5px}
+}
 @media(max-width:1060px){.nav-links{display:none}}
 
 /* ───────── 히어로 : 왼쪽 말·오른쪽 가전 벽 ───────── */
