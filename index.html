@@ -11,10 +11,10 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css">
 <style>
-/* ───────── 쇼룸 v2 토큰 — 흰 벽 · 돌색 바닥 · 네이비 한 색 · 가격표는 황동 ───────── */
+/* ───────── 쇼룸 v2 토큰 — 흰 벽 · 베이지 바닥 · 진한 토프 한 색 · 가격표는 황동 (10-30 대표님 "남색 말고 고급스러운 베이지로, 이 계열로 쭉") ───────── */
 :root{
-  --paper:#ffffff; --stone:#f4f2ee; --stone-2:#ebe8e1; --line:#e2dfd9; --line-2:#cfcac1;
-  --ink:#14232a; --muted:#5f6a72; --navy:#193c49; --navy-deep:#10272f; --on-navy:#c9d8dc;
+  --paper:#ffffff; --stone:#f3ede3; --stone-2:#e9e0d2; --line:#e1d8ca; --line-2:#cdbfae;
+  --ink:#2a2420; --muted:#6b6058; --navy:#4a3d31; --navy-deep:#2e261f; --on-navy:#dccfbf;
   --brass:#9a7b4f; --kakao:#fee500; --kakao-ink:#3c1e1e; --ok:#1f7a4d; --err:#b3261e;
   --serif:"MaruBuri","MaruBuriBold","Noto Serif KR",serif;
   --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
@@ -204,15 +204,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,25
 .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .gcount{font-size:15.7px;color:var(--muted);margin-bottom:14px}
 /* 10-30 대표님 "/sam/과 차이를 봐" — 남색 바탕 위 흰 카드 · 회색 사진판 크게 · 굵은 이름·가격 · '자세히 보기' 버튼 */
-.catalog{background:#14243f;border-top:0}
-.catalog .sec-head h2{color:#fff}
-.catalog .sec-head p,.catalog .filter-label,.catalog .gcount{color:#b9c4d6}
-.catalog .gcount b{color:#fff}
-.catalog .sec-head::before{background:#e0b765}
-.catalog .chip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#e6ecf4}
-.catalog .chip.on{background:#fff;color:#14243f;border-color:#fff}
-.catalog .more .btn-line{color:#fff;border-color:rgba(255,255,255,.6)}
-@media(hover:hover){.catalog .more .btn-line:hover{background:rgba(255,255,255,.08)}}
+.catalog{background:var(--stone-2);border-top:0}
+.catalog .sec-head::before{background:var(--brass)}
+.catalog .chip{background:#fff;border-color:var(--line-2)}
+.catalog .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.catalog .gcount b{color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 @media(min-width:1400px){.grid{grid-template-columns:repeat(5,1fr)}}
 .pcard{display:flex;flex-direction:column;background:#fff;border:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:box-shadow .15s,transform .15s}
@@ -220,7 +216,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,25
 .imgbox{position:relative;aspect-ratio:1;padding:9%;display:flex;align-items:center;justify-content:center;background:#f4f4f2}
 .imgbox img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}  /* 흰 배경 사진이 회색 판에 녹게(/sam/과 같게) */
 .noimg{color:var(--muted);font-size:14.6px}
-.best-badge{position:absolute;top:12px;left:12px;background:#1b1f22;color:#fff;font-size:13.4px;font-weight:800;padding:4px 9px;border-radius:6px}
+.best-badge{position:absolute;top:12px;left:12px;background:var(--brass);color:#fff;font-size:13.4px;font-weight:800;padding:4px 9px;border-radius:6px}
 .pcard .body{padding:14px 16px 14px;display:flex;flex-direction:column;gap:3px;flex:1}
 .pcard .gj{display:inline-block;align-self:flex-start;font-size:13.4px;font-weight:800;color:var(--brass);border:1px solid var(--brass);border-radius:4px;padding:1px 7px;margin-bottom:6px}
 .pcard .brand{font-size:14.6px;color:var(--muted)}
@@ -228,7 +224,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,25
 .pcard .model{font-size:14px;color:#9aa3a9}
 .pcard .foot{margin-top:auto;padding-top:12px;font-size:14.6px;color:var(--muted);display:flex;justify-content:flex-start;align-items:baseline;gap:6px}
 .pcard .foot b{font-family:var(--sans);font-weight:900;font-size:23.5px;color:var(--ink);letter-spacing:-.01em}
-.pcard::after{content:"자세히 보기 ›";display:block;background:#14243f;color:#fff;text-align:center;font-weight:800;font-size:16.2px;padding:13px 0}
+.pcard::after{content:"자세히 보기 ›";display:block;background:var(--navy);color:#fff;text-align:center;font-weight:800;font-size:16.2px;padding:13px 0}
 .more{text-align:center;margin-top:32px}
 
 /* ───────── 구좌 ───────── */
