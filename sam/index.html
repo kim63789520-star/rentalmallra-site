@@ -508,59 +508,61 @@ footer{background:#111318}
   .pcard .m b{font-size:17px}
 }
 
-/* ===== 남색 바탕 + 누르는 곳 표시 (10-15 대표님 '배경 남색, 누르는 부분 알아보기 쉽게') =====
-   누르는 것 = 흰 카드·흰 버튼 + 화살표(›) · 신청 버튼 = 노랑 */
-:root{--nv:#0f2246;--nv2:#17305c;--nv-line:rgba(255,255,255,.14);--nv-muted:#a9b6cf;--tap:#ffc83d;--tap-ink:#1a1400}
-body{background:var(--nv)}
-header{background:rgba(15,34,70,.94);border-bottom:1px solid var(--nv-line)}
-.logo b{color:#fff}
+/* ===== 베이지 바탕 (10-30 대표님 "남색 말고 고급스러운 베이지로, 이 계열로 쭉" — 보람 메인과 같은 계열) =====
+   바탕 = 밝은 베이지 · 누르는 것 = 흰 카드 + 화살표(›) · 포인트 = 진한 토프(--nv) · 신청 버튼 = 노랑
+   (옛 남색판 10-15: 토큰 이름 --nv 는 그대로 두고 값만 바꿈) */
+:root{--nv:#4a3d31;--nv2:#5c4d3f;--nv-line:#e1d8ca;--nv-muted:#7a6c60;--tap:#ffc83d;--tap-ink:#1a1400;
+  --bg:#f3ede3;--bg2:#e9e0d2;--ink:#2a2420;--muted:#6b6058;--line:#e1d8ca;--brass:#9a7b4f}
+body{background:var(--bg)}
+header{background:rgba(243,237,227,.94);border-bottom:1px solid var(--nv-line)}
+.logo b{color:var(--ink)}
 .logo span{color:var(--nv-muted)}
-.nav-links{color:#d3dbea}
-.nav-links a:hover{color:#fff}
+.nav-links{color:#5a4e44}
+.nav-links a:hover{color:var(--ink)}
 .nav-cta .btn{background:var(--tap);color:var(--tap-ink);font-weight:800}
 .nav-cta .btn:hover{background:#ffd76a}
 
 .sam-hero{border-bottom:0}
-.sam-hero .kick{color:var(--nv-muted)}
-.sam-hero h1{color:#fff}
-.sam-hero h1 em{color:#7fa6e8}
-.sam-hero p{color:#c3cde0}
-.sam-cos button{background:#fff;border:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-.sam-cos button:hover{box-shadow:0 0 0 3px var(--tap),0 4px 14px rgba(0,0,0,.18)}
+.sam-hero .kick{color:var(--brass)}
+.sam-hero h1{color:var(--ink)}
+.sam-hero h1 em{color:var(--brass)}
+.sam-hero p{color:var(--muted)}
+.sam-cos button{background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(74,61,49,.08)}
+.sam-cos button:hover{box-shadow:0 0 0 3px var(--tap),0 4px 14px rgba(74,61,49,.08)}
 .sam-cos button.on{box-shadow:0 0 0 3px var(--tap)}
 .sam-cos .ct:after{content:"›";font-size:24.6px;font-weight:700;color:var(--nv);margin-left:12px;vertical-align:-2px}
 
-section.catalog{background:var(--nv)}
-.sf{border:0;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+section.catalog{background:var(--bg2)}
+.sf{border:1px solid var(--line);box-shadow:0 4px 14px rgba(74,61,49,.06)}
 .sf-opt{border-color:var(--line);background:#fff;margin:2px}
 .sf-opt:hover{border-color:var(--nv)}
 .sf-opt.on{background:var(--nv);color:#fff;border-color:var(--nv)}
-.sf-opt.on i{color:#a9b6cf}
-.sf-bar .gcount,.sf-bar .gcount b{color:#fff}
-.sort{background:var(--nv2);border-radius:10px;padding:3px}
-.sort button{color:#c3cde0;border-radius:8px;padding:6px 12px}
+.sf-opt.on i{color:#dccfbf}
+.sf-bar .gcount,.sf-bar .gcount b{color:var(--ink)}
+.sort{background:#fff;border:1px solid var(--line);border-radius:10px;padding:3px}
+.sort button{color:var(--muted);border-radius:8px;padding:6px 12px}
 .sort button+button:before{display:none}
-.sort button.on{background:#fff;color:var(--nv)}
-.qbox input{background:#fff;border:0}
+.sort button.on{background:var(--nv);color:#fff}
+.qbox input{background:#fff;border:1px solid var(--line)}
 .qbox input:focus{box-shadow:0 0 0 3px var(--tap)}
 .sf-tags button{background:var(--tap);color:var(--tap-ink);font-weight:700}
 .sf-tags button:hover{background:#ffd76a}
 
-.pcard{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:box-shadow .15s}
-.pcard:hover{box-shadow:0 0 0 3px var(--tap),0 4px 14px rgba(0,0,0,.18)}
+.pcard{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(74,61,49,.08);transition:box-shadow .15s}
+.pcard:hover{box-shadow:0 0 0 3px var(--tap),0 4px 14px rgba(74,61,49,.08)}
 .pcard .imgbox{border-radius:0}
 .pcard .body{padding:14px 14px 0;display:flex;flex-direction:column;flex:1}
 .pcard .foot{margin-top:auto;display:block}
 .pcard .go{display:block;margin:12px -14px 0;padding:11px 0;text-align:center;background:var(--nv);color:#fff;font-size:15.1px;font-weight:700}
 .pcard:hover .go{background:var(--nv2)}
-.more .btn{background:#fff;border:0;color:var(--nv);font-weight:800}
+.more .btn{background:#fff;border:1px solid var(--line);color:var(--nv);font-weight:800}
 .more .btn:hover{box-shadow:0 0 0 3px var(--tap)}
-.grid .noresult{color:#c3cde0!important}
+.grid .noresult{color:var(--muted)!important}
 
-.notice{background:var(--nv)}
+.notice{background:var(--bg)}
 .notice-inner{background:#fff}
-.consult{background:var(--nv)}
-.consult-card{border:0}
+.consult{background:var(--bg)}
+.consult-card{border:1px solid var(--line)}
 .cs-form button{background:var(--tap);color:var(--tap-ink);font-weight:800}
 .cs-form button:hover{background:#ffd76a}
 .leadbar{background:var(--nv2);border-top:1px solid var(--nv-line)}
@@ -581,47 +583,47 @@ section.catalog{background:var(--nv)}
 }
 
 /* 하단 고정 상담 바 — landing_build/dock_bar.py
-   PC: 10-30 대표님 "가온렌탈 바처럼 · 오른쪽에 카톡 추가" = 남색 바 · 전화 · 이름·연락처 · 동의[내용보기] · 상담신청 · 카톡
-   폰: 10-30 대표님 "전화(초록) | 카톡(노랑) | 상담신청(주황)"
-   10-30 대표님 "하단바 조화롭게" — 바 색 = 그 페이지 남색(--dk-bg), 모서리 = 그 페이지 버튼 모서리(--dk-r),
-   칸·버튼 높이 46px 하나로, 그라데이션·큰 번호 뺌, 본문 폭(1240)에 맞춰 정렬 */
-.dk{position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--dk-bg,#1f3461);border-top:1px solid rgba(255,255,255,.12);box-shadow:0 -4px 18px rgba(0,0,0,.16);padding-bottom:env(safe-area-inset-bottom)}
-.dk-in{display:flex;align-items:center;gap:10px;max-width:var(--dk-wrap,1288px);margin:0 auto;padding:12px 24px}
-.dk-call{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;white-space:nowrap;padding-right:18px;margin-right:6px;border-right:1px solid rgba(255,255,255,.16)}
-.dk-ico{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.dk-ico svg{width:20px;height:20px}
-.dk-call span{display:flex;flex-direction:column;line-height:1.15}
-.dk-call b{font-size:23px;font-weight:800;letter-spacing:-.01em}
-.dk-call small{font-size:12px;font-weight:500;color:rgba(255,255,255,.68);margin-top:2px}
-.dk-form{display:flex;align-items:center;gap:10px;flex:1;min-width:0;margin:0}
-.dk-form input[type=text],.dk-form input[type=tel]{height:46px;min-width:0;border:0;border-radius:var(--dk-r,6px);background:#fff;color:#14243f;padding:0 14px;font-size:15.5px;font-weight:600;font-family:inherit}
-.dk-form input[name=name]{flex:0 1 170px}.dk-form input[name=phone]{flex:1 1 240px}
-.dk-form input::placeholder{color:#8a94a6;font-weight:500}
-.dk-form input:focus{outline:2px solid #f47b20;outline-offset:0}
-.dk-agree{display:flex;align-items:center;gap:7px;font-size:14px;color:rgba(255,255,255,.86);white-space:nowrap;cursor:pointer;margin:0 4px 0 6px}
-.dk-agree input{width:18px;height:18px;margin:0;accent-color:#f47b20}
-.dk-agree a{color:rgba(255,255,255,.86);text-decoration:underline;text-underline-offset:2px;font-size:13px}
-.dk-btn{display:flex;align-items:center;justify-content:center;gap:7px;height:46px;border-radius:var(--dk-r,6px);font-weight:800;white-space:nowrap;text-decoration:none;font-family:inherit;font-size:16px;padding:0 22px}
-.dk-btn svg{width:19px;height:19px;flex:0 0 auto}
-.dk-apply{background:#f47b20;color:#fff;border:0;cursor:pointer;min-width:132px}
+   10-30 대표님 "하단바 색과 폭, 넓이 다 이렇게 해" = 피오렌탈(porental.kr) 바 그대로:
+   주황 바 화면 끝까지 · 높이 약 110px · 왼쪽 전화 아이콘 + 작은 '빠르고 간편한 렌탈 상담신청' + 큰 번호
+   · 이름 · 연락처 · 검정 '신청하기' · 동의 + [내용보기] 테두리 글자 · (우리 것) 노란 카톡 버튼 · 가운데 정렬
+   폰: 전화(초록) | 카톡(노랑) | 상담신청(주황) */
+.dk{position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--dk-bg,#f7941e);box-shadow:0 -6px 24px rgba(0,0,0,.16);padding-bottom:env(safe-area-inset-bottom)}
+.dk-in{display:flex;align-items:center;justify-content:center;gap:14px;max-width:var(--dk-wrap,1648px);margin:0 auto;padding:26px 24px}
+.dk-call{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;white-space:nowrap;margin-right:14px}
+.dk-ico{width:44px;height:44px;color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.dk-ico svg{width:38px;height:38px}
+.dk-call span{display:flex;flex-direction:column-reverse;line-height:1.1}
+.dk-call b{font-size:36px;font-weight:800;letter-spacing:-.02em}
+.dk-call small{font-size:15px;font-weight:600;color:rgba(255,255,255,.95);margin-bottom:3px}
+.dk-form{display:flex;align-items:center;gap:10px;margin:0}
+.dk-form input[type=text],.dk-form input[type=tel]{height:50px;border:0;border-radius:var(--dk-r,6px);background:#fff;color:#222;padding:0 16px;font-size:16px;font-weight:500;font-family:inherit}
+.dk-form input[name=name]{width:180px}.dk-form input[name=phone]{width:260px}
+.dk-form input::placeholder{color:#9a9a9a}
+.dk-form input:focus{outline:2px solid #111;outline-offset:0}
+.dk-agree{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:#fff;white-space:nowrap;cursor:pointer;margin:0 6px 0 10px}
+.dk-agree input{width:20px;height:20px;margin:0;accent-color:#111;background:#fff;border-radius:3px}
+.dk-agree a{color:#fff;text-decoration:none;font-size:12.5px;font-weight:600;border:1px solid rgba(255,255,255,.9);border-radius:4px;padding:3px 9px}
+.dk-btn{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:var(--dk-r,6px);font-weight:800;white-space:nowrap;text-decoration:none;font-family:inherit;font-size:17px;padding:0 28px}
+.dk-btn svg{width:20px;height:20px;flex:0 0 auto}
+.dk-apply{background:#111;color:#fff;border:0;cursor:pointer;min-width:200px}
 .dk-apply:disabled{opacity:.6}
 .dk-kakao{background:#fee500;color:#3c1e1e}
-@media(hover:hover){.dk-apply:hover{background:#e86e12}.dk-kakao:hover{background:#f3d900}}
+@media(hover:hover){.dk-apply:hover{background:#000}.dk-kakao:hover{background:#f3d900}}
 .dk-m{display:none}
-body{padding-bottom:84px}
-@media(max-width:1280px){.dk-call small{display:none}.dk-call b{font-size:20px}.dk-agree span{display:none}.dk-in{padding:12px 18px}}
+body{padding-bottom:110px}
+@media(max-width:1400px){.dk-call b{font-size:30px}.dk-call small{font-size:13.5px}.dk-agree span{display:none}.dk-form input[name=name]{width:140px}.dk-form input[name=phone]{width:210px}.dk-apply{min-width:150px;padding:0 20px}.dk-in{padding:20px 18px;gap:10px}}
 @media(max-width:900px){
-  .dk{border-top:0}
+  .dk{box-shadow:none}
   .dk-in{display:none}
   .dk-m{display:grid;grid-template-columns:1fr 1fr 1.2fr}
   .dk-m a{height:60px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:17px;font-weight:800;text-decoration:none}
   .dk-m svg{width:19px;height:19px}
   .dk-m .m-call{background:#1a9e57;color:#fff}
   .dk-m .m-kakao{background:#fee500;color:#3c1e1e}
-  .dk-m .m-apply{background:#f47b20;color:#fff}
+  .dk-m .m-apply{background:#f7941e;color:#fff}
   body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
 }
-.dk{--dk-bg:#0f2246;--dk-r:8px;--dk-wrap:1648px}
+.dk{--dk-r:6px;--dk-wrap:1648px}
 </style>
 </head>
 <body>
@@ -768,7 +770,7 @@ body{padding-bottom:84px}
 </div>
 <aside class="dk" aria-label="빠른 상담">
   <div class="dk-in">
-    <a class="dk-call" href="tel:01021657015" aria-label="전화 010-2165-7015"><span class="dk-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span><span><b>010-2165-7015</b><small>빠르고 간편한 상담신청</small></span></a>
+    <a class="dk-call" href="tel:01021657015" aria-label="전화 010-2165-7015"><span class="dk-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span><span><b>010-2165-7015</b><small>빠르고 간편한 렌탈 상담신청</small></span></a>
     <form class="dk-form tg-consult" id="barForm" novalidate>
       <input type="text" name="name" placeholder="이름" autocomplete="name" aria-label="이름" required>
       <input type="tel" name="phone" inputmode="numeric" autocomplete="tel" placeholder="연락처 (숫자만)" required aria-label="연락처">
