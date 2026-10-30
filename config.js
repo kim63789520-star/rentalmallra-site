@@ -24,6 +24,14 @@ window.VISITLOG = "https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz
     var h=a.getAttribute("href")||"", t=(a.textContent||"").replace(/\s+/g," ").trim().slice(0,20);
     if(/kakao/i.test(h)) log("카톡");
     else if(/^tel:/i.test(h)) log("전화");
-    else if(a.type==="submit"||/^ap(Send|Next)$|^goApply$/.test(a.id)||/상담 신청|신청하기|번호 남기기/.test(t)) log("신청 "+t);
+    // 10-30: <button> 기본 type이 submit이라 '냉장가전'·'2구좌'·'더 보기' 탭까지 신청으로 잡히던 것 — 폼 안 버튼만
+    else if((a.type==="submit"&&a.form)||/^ap(Send|Next)$|^goApply$/.test(a.id)||/상담 신청|신청하기|번호 남기기/.test(t)) log("신청 "+t);
+  },true);
+  // 10-30 대표님 "왜 접수 안 했는지" — 폼 제출 시도와 막힌 이유(번호·동의)를 남긴다. 번호 자체는 안 남긴다.
+  document.addEventListener("submit",function(e){
+    var f=e.target, p=f.elements&&f.elements["phone"], g=f.elements&&f.elements["agree"];
+    var d=p?(p.value||"").replace(/[^0-9]/g,""):"";
+    var why=!p?"번호칸없음":(d.length<10||d.length>11)?"번호오류("+d.length+"자리)":(g&&!g.checked)?"동의안함":"통과";
+    log("제출 "+why);
   },true);
 })();
