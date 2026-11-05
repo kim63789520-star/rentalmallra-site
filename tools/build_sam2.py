@@ -66,14 +66,14 @@ s = rep(s, '    <div class="sf-bar">',
     <div class="sf-bar">''')
 s = rep(s, '        <div class="sort" id="sort">',
         '        <button type="button" class="pick-toggle" id="pickToggle">골라서 공유</button>\n        <div class="sort" id="sort">')
-s = rep(s, '<div class="leadbar">',
+s = rep(s, '<aside class="dk"',  # 10-30 하단 바 개편으로 leadbar → dk (11-05)
 '''<div class="pickbar" id="pickbar" hidden><div class="wrap">
   <div class="pinfo">선택 <b id="pkCount">0</b>개<a id="pkClear">비우기</a></div>
   <button type="button" class="pb-all" id="pkAll">검색결과 전체</button>
   <button type="button" class="pb-send" id="pkSend" disabled>선택한 것 보내기</button>
 </div></div>
 <div class="ptoast" id="ptoast" role="status"></div>
-<div class="leadbar">''')
+<aside class="dk"''')
 
 # 고객 링크(?ids= / ?q=)와 고르기 모드
 s = rep(s, 'let sel={co:[],cat:[],brand:[],gj:[],price:[]}, q="", sort="def", shown=0;',
@@ -177,11 +177,11 @@ s = rep(s, "gcount.innerHTML='전체 <b>'+cur.length+'</b>개';", "gcount.innerH
 
 # 상담사 전용 페이지라 상담 접수(폼·하단 바)는 뺌. 문의는 카카오톡으로
 s, n1 = re.subn(r'<section class="consult" id="consult">.*?</section>\n', '', s, flags=re.S)
-s, n2 = re.subn(r'<div class="leadbar">.*?</form>\s*</div>\s*</div>\n', '', s, flags=re.S)
+s, n2 = re.subn(r'<aside class="dk".*?</aside>\n', '', s, flags=re.S)
 assert n1 == 1 and n2 == 1, (n1, n2)
-# 대표님만 보는 곳이라 왼쪽 떠 있는 카카오톡 상담 버튼도 뺌 (10-17 대표님)
+# 대표님만 보는 곳이라 왼쪽 떠 있는 카카오톡 상담 버튼도 뺌 (10-17 대표님) — 10-30부터 /sam/에 없음
 s, n3 = re.subn(r'<div class="floatbtns">.*?</div>\n', '', s, flags=re.S)
-assert n3 == 1, n3
+assert n3 <= 1, n3
 # 상담 문구 전부 뺌 — 상단 카톡 상담 버튼 · 하단 CS(상담 신청 24시간) (10-17 대표님 "상담 문구 다 없애")
 s, n4 = re.subn(r'\s*<div class="nav-cta">.*?</div>', '', s, count=1, flags=re.S)
 s, n5 = re.subn(r'\s*<div class="foot-cs">.*?</div>\s*</div>', '', s, count=1, flags=re.S)
