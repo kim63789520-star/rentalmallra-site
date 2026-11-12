@@ -345,6 +345,12 @@ footer{background:var(--navy-deep);color:var(--on-navy);padding:40px 0 120px;fon
   .hv-track{border-radius:0}
   .hero-kicker,.hero h1,.hero .lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .quick{margin-top:14px}
+  /* 11-11 대표님 "ㄱㄱ" — 폰 첫 화면에 번호 칸·신청 버튼·동의가 다 보이게: 상담 칸을 배너 바로 밑으로, 가입 조건 칩은 그 아래로 */
+  .hero-copy{display:flex;flex-direction:column}
+  .hero-copy .quick{order:1;margin-top:8px}
+  .hero-copy .hero-fit{order:2;margin-top:14px}
+  .hero-copy .hero-rule{order:3}
+  .hv-dots{margin-top:6px}
   .hero-wall .wall{display:flex}
   .hero h1{font-size:clamp(30px,8vw,40px)}
   .hero .lead{font-size:15.5px}
