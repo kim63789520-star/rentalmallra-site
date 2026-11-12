@@ -79,7 +79,7 @@ s = rep(s, '<aside class="dk"',  # 10-30 하단 바 개편으로 leadbar → dk 
 s = rep(s, 'let sel={co:[],cat:[],brand:[],gj:[],price:[]}, q="", sort="def", shown=0;',
 '''let sel={co:[],cat:[],brand:[],gj:[],price:[]}, q="", sort="def", shown=0;
 var UP=new URLSearchParams(location.search);
-var IDS=UP.get("ids")?UP.get("ids").split(",").filter(Boolean):null;
+var IDS=UP.get("ids")?UP.get("ids").split(/[.,]/).filter(Boolean):null;
 var CUSTOM=!!(IDS||UP.get("q"));
 var picking=false, picked=[];
 if(UP.get("q")) q=UP.get("q").trim().toLowerCase();
@@ -141,11 +141,11 @@ JS = r"""
     a.classList.toggle("picked",i<0); bar();
   });
   $("pkClear").addEventListener("click",function(){ picked=[]; paint(); bar(); });
+  // 11-12: '검색결과 전체'가 ?q=검색어만 보내 상조사 필터가 빠짐 → 고객 화면에 더리본·소노까지 섞임. 이제 두 버튼 다 화면의 상품 번호를 그대로 보낸다
+  // 구분자 '.'(인코딩 안 됨) — ','는 %2C로 늘어나 문자에서 링크가 길어짐. 옛 ',' 링크도 읽힘
   function link(all){
     var u=new URL(location.pathname,location.origin);
-    if(all){ var qq=$("q").value.trim(); if(qq) u.searchParams.set("q",qq); if(sort!=="def") u.searchParams.set("sort",sort);
-      if(!qq){ u.searchParams.set("ids",cur.map(function(p){return p.id;}).join(",")); } }
-    else u.searchParams.set("ids",picked.join(","));
+    u.searchParams.set("ids",(all?cur.map(function(p){return p.id;}):picked).join("."));
     u.searchParams.set("t",title());
     return u.toString();
   }
