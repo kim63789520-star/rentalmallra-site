@@ -42,7 +42,7 @@ window.VISITLOG = "https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz
   try {
     var q = location.search, ref = document.referrer || "";
     var ad = /NaPm=|n_media=|n_query=|n_keyword=/.test(q) || /adcr\.naver|ad\.search\.naver/.test(ref);
-    if (!ad) return;
+    if (!ad || /^\/(bohum|boram22)\//.test(location.pathname)) return;  // 보험 페이지엔 안 띄움(카톡 채널 다름)
     var ls = window.localStorage, n = (parseInt(ls.getItem("fav_adn") || "0", 10) || 0) + 1;
     ls.setItem("fav_adn", String(n));
     if (n < 2) return;
