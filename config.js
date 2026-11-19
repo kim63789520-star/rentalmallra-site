@@ -22,7 +22,7 @@ window.VISITLOG = "https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz
   document.addEventListener("click",function(e){
     var a=e.target.closest&&e.target.closest("a,button"); if(!a) return;
     var h=a.getAttribute("href")||"", t=(a.textContent||"").replace(/\s+/g," ").trim().slice(0,20);
-    if(/kakao/i.test(h)) log("카톡");
+    if(/kakao/i.test(h)) log(a.hasAttribute("data-fav")?"카톡(안내창)":"카톡");  // 11-20 즐겨찾기 안내창에서 누른 건 따로
     else if(/^tel:/i.test(h)) log("전화");
     // 10-30: <button> 기본 type이 submit이라 '냉장가전'·'2구좌'·'더 보기' 탭까지 신청으로 잡히던 것 — 폼 안 버튼만
     else if((a.type==="submit"&&a.form)||/^ap(Send|Next)$|^goApply$/.test(a.id)||/상담 신청|신청하기|번호 남기기/.test(t)) log("신청 "+t);
@@ -52,14 +52,19 @@ window.VISITLOG = "https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz
       b.style.cssText = "position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483000;width:calc(100% - 32px);max-width:480px;" +
         "box-sizing:border-box;background:#fff4f8;color:#5a2a3c;border:2px solid #ffc2d6;border-radius:18px;box-shadow:0 6px 18px rgba(255,105,150,.22);" +
         "padding:10px 40px 10px 14px;font:14px/1.45 -apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;";
-      b.textContent = "또 와 주셨네요! 너무 반가워요 🥰 즐겨찾기(★) 콕 눌러 두시면 다음엔 검색 없이 바로 만나요 💛 궁금한 건 카톡으로 살짝 물어봐 주세요!";
+      var m = document.createElement("a");  // 11-20 대표님: 문구를 눌러도 카톡 상담으로 (× 만 닫기)
+      m.href = "http://pf.kakao.com/_xowzxhX/chat"; m.target = "_blank"; m.rel = "noopener"; m.setAttribute("data-fav", "1");
+      m.style.cssText = "display:block;color:inherit;text-decoration:none;";
+      m.textContent = "또 와 주셨네요! 너무 반가워요 🥰 즐겨찾기(★) 콕 눌러 두시면 다음엔 검색 없이 바로 만나요 💛 궁금한 건 카톡으로 살짝 물어봐 주세요!";
+      m.onclick = function () { b.remove(); };
+      b.appendChild(m);
       var x = document.createElement("button");
       x.type = "button"; x.setAttribute("aria-label", "닫기"); x.textContent = "×";
       x.style.cssText = "position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;font-size:20px;color:#888;padding:4px 8px;cursor:pointer;";
       x.onclick = function () { b.remove(); };
       b.appendChild(x);
       var k = document.createElement("a");  // 11-20 대표님: 안내에서 바로 카톡 상담으로 (닫기는 그대로 닫기)
-      k.href = "http://pf.kakao.com/_xowzxhX/chat"; k.target = "_blank"; k.rel = "noopener";
+      k.href = "http://pf.kakao.com/_xowzxhX/chat"; k.target = "_blank"; k.rel = "noopener"; k.setAttribute("data-fav", "1");
       k.textContent = "💬 카톡으로 물어보기";
       k.style.cssText = "display:block;margin-top:8px;text-align:center;background:#fee500;color:#3c1e1e;border-radius:12px;padding:9px 0;font-weight:700;text-decoration:none;";
       k.onclick = function () { b.remove(); };
