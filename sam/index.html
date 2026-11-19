@@ -919,7 +919,7 @@ render();
     modal.addEventListener("click",function(e){ if(e.target===modal) closeModal(); });
     document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !modal.hidden) closeModal(); });
     document.getElementById("cmOk").addEventListener("click",function(){
-      if(!cmA1.checked){ toast("개인정보 수집·이용에 동의해 주세요.","err"); return; }
+      cmA1.checked=true; var a0=pending&&pending.elements["agree"]; if(a0) a0.checked=true;
       var f=pending; closeModal(); if(f) send(f);
     });
   }
@@ -958,7 +958,7 @@ render();
       if(digits.length<10||digits.length>11){ toast("핸드폰번호를 정확히 입력해 주세요.","err"); localMsg(form,"핸드폰번호를 정확히 입력해 주세요.","err"); form.elements["phone"].focus(); return; }
       var a1=form.elements["agree"];
       if(a1){
-        if(!a1.checked){ toast("개인정보 수집·이용에 동의해 주세요.","err"); localMsg(form,"개인정보 수집·이용에 동의해 주세요.","err"); a1.focus(); return; }
+        if(!a1.checked){ openModal(form); return; }
         send(form);
       } else {
         openModal(form);
