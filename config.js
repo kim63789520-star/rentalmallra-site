@@ -36,8 +36,8 @@ window.VISITLOG = "https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz
   },true);
 })();
 
-/* 즐겨찾기 안내 (11-18 대표님 · 11-20 문구 교체, 매번) — 같은 브라우저로 광고 타고 2번째부터 들어올 때마다 안내.
- * 상담 버튼(아래 고정 바)을 가리지 않게 화면 위쪽에 띄운다. 닫기 가능·12초 뒤 사라짐. 저장은 이 브라우저 localStorage만. */
+/* 즐겨찾기 안내 (11-20 대표님 "3번 유지") — 같은 브라우저로 광고 타고 3번째 들어올 때부터, 하루 1번만, 작은 띠 한 줄.
+ * 아래 상담 바를 가리지 않게 화면 맨 위에 얇게. ×로 닫기·10초 뒤 사라짐. 저장은 이 브라우저 localStorage만. */
 (function () {
   try {
     var q = location.search, ref = document.referrer || "";
@@ -45,32 +45,32 @@ window.VISITLOG = "https://script.google.com/macros/s/AKfycbw0JSTa9jIlbXOcCOSBpz
     if (!ad || /^\/(bohum|boram22)\//.test(location.pathname)) return;  // 보험 페이지엔 안 띄움(카톡 채널 다름)
     var ls = window.localStorage, n = (parseInt(ls.getItem("fav_adn") || "0", 10) || 0) + 1;
     ls.setItem("fav_adn", String(n));
-    if (n < 2) return;
+    var d = new Date(), today = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    if (n < 3 || ls.getItem("fav_day") === today) return;
+    ls.setItem("fav_day", today);
     var show = function () {
       var b = document.createElement("div");
       b.setAttribute("role", "status");
-      b.style.cssText = "position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483000;width:calc(100% - 32px);max-width:480px;" +
-        "box-sizing:border-box;background:#fff4f8;color:#5a2a3c;border:2px solid #ffc2d6;border-radius:18px;box-shadow:0 6px 18px rgba(255,105,150,.22);" +
-        "padding:10px 40px 10px 14px;font:14px/1.45 -apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;";
-      var m = document.createElement("a");  // 11-20 대표님: 문구를 눌러도 카톡 상담으로 (× 만 닫기)
-      m.href = "http://pf.kakao.com/_xowzxhX/chat"; m.target = "_blank"; m.rel = "noopener"; m.setAttribute("data-fav", "1");
-      m.style.cssText = "display:block;color:inherit;text-decoration:none;";
-      m.textContent = "또 와 주셨네요! 너무 반가워요 🥰 즐겨찾기(★) 콕 눌러 두시면 다음엔 검색 없이 바로 만나요 💛 궁금한 건 카톡으로 살짝 물어봐 주세요!";
-      m.onclick = function () { b.remove(); };
+      b.style.cssText = "position:fixed;left:50%;top:8px;transform:translateX(-50%);z-index:2147483000;width:calc(100% - 24px);max-width:460px;" +
+        "box-sizing:border-box;display:flex;align-items:center;gap:8px;background:#fff;color:#333;border:1px solid #e5e5e5;border-radius:999px;" +
+        "box-shadow:0 4px 14px rgba(0,0,0,.12);padding:6px 6px 6px 14px;font:13px/1.3 -apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;";
+      var m = document.createElement("span");
+      m.style.cssText = "flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;";
+      m.textContent = "또 와 주셨네요! 즐겨찾기(★) 해 두시면 바로 와요";
       b.appendChild(m);
-      var x = document.createElement("button");
-      x.type = "button"; x.setAttribute("aria-label", "닫기"); x.textContent = "×";
-      x.style.cssText = "position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;font-size:20px;color:#888;padding:4px 8px;cursor:pointer;";
-      x.onclick = function () { b.remove(); };
-      b.appendChild(x);
-      var k = document.createElement("a");  // 11-20 대표님: 안내에서 바로 카톡 상담으로 (닫기는 그대로 닫기)
+      var k = document.createElement("a");
       k.href = "http://pf.kakao.com/_xowzxhX/chat"; k.target = "_blank"; k.rel = "noopener"; k.setAttribute("data-fav", "1");
-      k.textContent = "💬 카톡으로 물어보기";
-      k.style.cssText = "display:block;margin-top:8px;text-align:center;background:#fee500;color:#3c1e1e;border-radius:12px;padding:9px 0;font-weight:700;text-decoration:none;";
+      k.textContent = "카톡 문의";
+      k.style.cssText = "flex:none;background:#fee500;color:#3c1e1e;border-radius:999px;padding:6px 10px;font-weight:700;text-decoration:none;";
       k.onclick = function () { b.remove(); };
       b.appendChild(k);
+      var x = document.createElement("button");
+      x.type = "button"; x.setAttribute("aria-label", "닫기"); x.textContent = "×";
+      x.style.cssText = "flex:none;border:0;background:none;font-size:18px;line-height:1;color:#999;padding:4px 6px;cursor:pointer;font-family:inherit;";
+      x.onclick = function () { b.remove(); };
+      b.appendChild(x);
       document.body.appendChild(b);
-      setTimeout(function () { if (b.parentNode) b.remove(); }, 20000);
+      setTimeout(function () { if (b.parentNode) b.remove(); }, 10000);
     };
     if (document.body) show(); else document.addEventListener("DOMContentLoaded", show);
   } catch (e) {}
