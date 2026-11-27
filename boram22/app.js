@@ -39,6 +39,12 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (busy || completed) return;
+    if (!form.elements.name.value.trim()) {
+      message('이름을 적어 주세요.', true);
+      form.elements.name.setAttribute('aria-invalid', 'true');
+      form.elements.name.focus();
+      return;
+    }
     const phone = form.elements.phone.value.replace(/\D/g, '');
     if (!/^010\d{8}$/.test(phone)) {
       message('010으로 시작하는 휴대폰번호 11자리를 확인해 주세요.', true);

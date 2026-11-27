@@ -203,7 +203,7 @@ footer a{color:#cfcfcf}
       <div class="chips"><button type="button" data-k="water" aria-pressed="false"><i class="ck"></i><span class="ic">💧</span><span class="tx">정수기·비데</span></button><button type="button" data-k="laptop" aria-pressed="false"><i class="ck"></i><span class="ic">💻</span><span class="tx">노트북·컴퓨터</span></button><button type="button" data-k="ebike" aria-pressed="false"><i class="ck"></i><span class="ic">🚲</span><span class="tx">전기자전거</span></button><button type="button" data-k="massage" aria-pressed="false"><i class="ck"></i><span class="ic">💺</span><span class="tx">안마의자</span></button><button type="button" data-k="bed" aria-pressed="false"><i class="ck"></i><span class="ic">🛏️</span><span class="tx">침대·매트리스·소파</span></button><button type="button" data-k="fridge" aria-pressed="false"><i class="ck"></i><span class="ic">🧊</span><span class="tx">냉장고·김치냉장고</span></button><button type="button" data-k="wash" aria-pressed="false"><i class="ck"></i><span class="ic">🧺</span><span class="tx">세탁기·건조기</span></button><button type="button" data-k="tv" aria-pressed="false"><i class="ck"></i><span class="ic">📺</span><span class="tx">TV·프로젝터</span></button><button type="button" data-k="air" aria-pressed="false"><i class="ck"></i><span class="ic">❄️</span><span class="tx">에어컨·공기청정기</span></button><button type="button" data-k="kitchen" aria-pressed="false"><i class="ck"></i><span class="ic">🍳</span><span class="tx">주방가전</span></button><button type="button" data-k="clean" aria-pressed="false"><i class="ck"></i><span class="ic">🧹</span><span class="tx">청소기·생활가전</span></button><button type="button" data-k="etc" aria-pressed="false"><i class="ck"></i><span class="ic">➕</span><span class="tx">기타</span></button></div>
       <input type="hidden" name="w1" value=""><input type="hidden" name="w2" value="">
       <div class="in2"><input type="tel" name="tel" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="휴대폰 010-0000-0000 (필수)" aria-label="휴대폰 번호 (필수)">
-        <input type="text" name="name" autocomplete="name" maxlength="20" placeholder="이름 (선택)" aria-label="이름 (선택)"></div>
+        <input type="text" name="name" autocomplete="name" maxlength="20" placeholder="이름" aria-label="이름" required></div>
       <select name="when" aria-label="통화 편한 시간"><option>통화 편한 시간: 아무 때나</option><option>오전 (9~12시)</option><option>오후 (12~18시)</option><option>저녁 (18시 이후)</option></select>
       <label class="agree"><input type="checkbox" name="agree"> 개인정보 수집·이용에 동의합니다 (필수)</label>
       <details class="pv"><summary>동의 내용 보기</summary><ul>
@@ -350,6 +350,7 @@ footer a{color:#cfcfcf}
     f.addEventListener("submit",function(e){
       e.preventDefault();
       var name=E.name.value.trim(), tel=E.tel.value.trim();
+      if(!name){say("이름을 적어 주세요.");E.name.focus();return;}
       if(!/^01\d-\d{3,4}-\d{4}$/.test(tel)){say("휴대폰 번호를 정확히 입력해 주세요.");E.tel.focus();return;}
       if(!E.agree.checked){say("개인정보 수집·이용에 동의해 주세요.");return;}
       var cfg=window.TG||{}; if(!cfg.relay){say("전송에 실패했습니다. 전화 010-8175-7015 로 연락 주세요.");return;}

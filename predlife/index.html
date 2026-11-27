@@ -187,7 +187,7 @@ footer a{color:#cfcfcf}
       <div class="chips"><button type="button" data-k="360" aria-pressed="false"><b>360</b><small>360만원 · 월 15,000원~</small></button><button type="button" data-k="450" aria-pressed="false"><b>450</b><small>450만원 · 월 18,750원~</small></button><button type="button" data-k="540" aria-pressed="false"><b>540</b><small>540만원 · 월 22,500원~</small></button><button type="button" data-k="ask" aria-pressed="false"><b>잘 모르겠어요</b><small>골라 주세요</small></button></div>
       <input type="hidden" name="prod" value="">
       <div class="in2"><input type="tel" name="tel" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="휴대폰 010-0000-0000 (필수)" aria-label="휴대폰 번호 (필수)">
-        <input type="text" name="name" autocomplete="name" maxlength="20" placeholder="이름 (선택)" aria-label="이름 (선택)"></div>
+        <input type="text" name="name" autocomplete="name" maxlength="20" placeholder="이름" aria-label="이름" required></div>
       <select name="when" aria-label="통화 편한 시간"><option>통화 편한 시간: 아무 때나</option><option>오전 (9~12시)</option><option>오후 (12~18시)</option><option>저녁 (18시 이후)</option></select>
       <label class="agree"><input type="checkbox" name="agree"> 개인정보 수집·이용에 동의합니다 (필수)</label>
       <details class="pv"><summary>동의 내용 보기</summary><ul>
@@ -385,6 +385,7 @@ footer a{color:#cfcfcf}
   f.addEventListener("submit",function(e){
     e.preventDefault();
     var name=E.name.value.trim(), tel=E.tel.value.trim();
+    if(!name){say("이름을 적어 주세요.");E.name.focus();return;}
     if(!/^01\d-\d{3,4}-\d{4}$/.test(tel)){say("휴대폰 번호를 정확히 입력해 주세요.");E.tel.focus();return;}
     if(!E.agree.checked){say("개인정보 수집·이용에 동의해 주세요.");return;}
     var cfg=window.TG||{}; if(!cfg.relay){say("전송에 실패했습니다. 전화 010-2165-7015 로 연락 주세요.");return;}
